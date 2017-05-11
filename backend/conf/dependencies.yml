@@ -1,0 +1,5 @@
+# Application dependencies
+
+require:
+    - net.sf.flexjson -> flexjson 3.3
+    - play

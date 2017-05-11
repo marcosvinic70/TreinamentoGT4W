@@ -1,0 +1,47 @@
+
+!!! 5
+html(lang='pt-br')
+
+	head
+
+		meta(charset="UTF-8")
+
+		link(href='styles/main.css', rel="stylesheet")
+		link(href='styles/principal.css', rel="stylesheet")
+
+		script(src='scripts/jquery.min.js')
+		script(src='scripts/angular.min.js')
+		script(src='scripts/angular-route.min.js')
+		script(src='scripts/underscore-min.js')
+		script(src='scripts/bootstrap.min.js')
+		script(src='scripts/ui-bootstrap.min.js')
+		script(src='scripts/ui-bootstrap-tpls.min.js')
+
+
+		title Treinamento
+
+	body(ng-app="appModule", ng-controller="AppCtrl", ng-cloak)
+
+			//Header
+			include header
+
+			//Conteúdo da página
+			div(ng-view)
+
+			//Footer
+			include footer
+	
+	//-<!-- build:js  scripts/scripts.min.js -->
+	
+	script(src='scripts/app.js')
+
+	script(src='scripts/utils/request.js')
+
+	script(src='scripts/utils/formatacao.js')
+	
+	script(src='scripts/services/inicialService.js')
+
+	script(src='scripts/controllers/inicial.js')
+
+
+	//-<!-- endbuild -->

@@ -1,0 +1,21 @@
+# Routes
+# This file defines all application routes (Higher priority routes first)
+# ~~~~
+
+
+GET     /teste                                 Application.teste
+
+
+
+# ROTA PARA OS ARQUIVOS ESTÁTICOS
+# IMPORTANTE!!! MANDER SEMPRE O BLOCO ABAIXO NO FINAL DO ARQUIVO!
+
+GET     /scripts/                               staticDir:public/scripts
+GET	    /styles/                                staticDir:public/styles
+GET	    /images/                                staticDir:public/images
+GET	    /fonts/	                                staticDir:public/fonts
+GET	    /manual/                                staticDir:public/manual
+GET	    /views/	                                staticDir:public/views
+GET     /tmp/                                   staticDir:tmp
+GET     /public/                                staticDir:public
+GET     /                                       staticDir:public/views
