@@ -10,6 +10,7 @@ module.exports = function(grunt) {
 			'index.jade',
 
 			'sections/inicial.jade',
+			'sections/usuarios.jade',
 
 		]
 	};

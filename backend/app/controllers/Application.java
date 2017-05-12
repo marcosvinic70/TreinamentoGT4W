@@ -10,6 +10,10 @@ public class Application extends BaseController{
 
 	public static void index() {
 		render();
+		
 	}
-
+	public static void usuarios() {
+		
+		render();
+	}
 }

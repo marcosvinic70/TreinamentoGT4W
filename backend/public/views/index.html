@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8">
+    <link href="styles/main.css" rel="stylesheet">
+    <link href="styles/principal.css" rel="stylesheet">
+    <script src="scripts/jquery.min.js"></script>
+    <script src="scripts/angular.min.js"></script>
+    <script src="scripts/angular-route.min.js"></script>
+    <script src="scripts/underscore-min.js"></script>
+    <script src="scripts/bootstrap.min.js"></script>
+    <script src="scripts/ui-bootstrap.min.js"></script>
+    <script src="scripts/ui-bootstrap-tpls.min.js"></script>
+    <title>Treinamento GT4W</title>
+  </head>
+  <body ng-app="appModule" ng-controller="AppCtrl" ng-cloak>
+    <!--Header-->
+    <header>
+      <h1>Header</h1>
+    </header>
+    <!--Conteúdo da página-->
+    <div ng-view></div>
+    <!--Footer-->
+    <h1>Footer</h1>
+  </body>
+  <script src="scripts/app.js"></script>
+  <script src="scripts/utils/request.js"></script>
+  <script src="scripts/utils/formatacao.js"></script>
+  <script src="scripts/services/inicialService.js"></script>
+  <script src="scripts/services/usuariosService.js"></script>
+  <script src="scripts/controllers/inicial.js"></script>
+  <script src="scripts/controllers/usuarios.js"></script>
+</html>

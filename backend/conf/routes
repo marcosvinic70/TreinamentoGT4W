@@ -7,6 +7,7 @@ GET     /teste                                 Application.teste
 
 
 
+
 # ROTA PARA OS ARQUIVOS ESTÁTICOS
 # IMPORTANTE!!! MANDER SEMPRE O BLOCO ABAIXO NO FINAL DO ARQUIVO!
 
@@ -19,3 +20,5 @@ GET	    /views/	                                staticDir:public/views
 GET     /tmp/                                   staticDir:tmp
 GET     /public/                                staticDir:public
 GET     /                                       staticDir:public/views
+
+

@@ -6,7 +6,7 @@ import javax.persistence.*;
 import play.db.jpa.*;
 
 @Entity
-public class Usuario extend Model {
+public class Usuario extends Model {
     public String nome;
     public int cpf;
     public Date dataNascimento;
@@ -23,19 +23,20 @@ public class Usuario extend Model {
         this.nome = nome;
         this.cpf = cpf;
         this.cargo = new Cargo(cargo);
-        this.dataCadastro = New Date();
+        this.dataCadastro = new Date();
 
     }
 
-    public editar(String nome, int cpf, String cargo, List<String>perfis, String sexo, Date dataCadastro) {
+    public void editar(String nome, int cpf, String cargo, List<String>perfis, String sexo, Date dataCadastro) {
         this.nome = nome;
         this.cpf = cpf;
         this.cargo = new Cargo(cargo);
         this.sexo = sexo;
         this.dataCadastro = dataCadastro;
-
-        for(String perfil : perfis) {
-            listaPerfil.clear();
+        
+        listaPerfil.clear();
+        for(String perfil : perfis) 
+        {
             listaPerfil.add(new PerfilUsuario(perfil));
         }
     }
