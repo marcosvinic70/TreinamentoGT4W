@@ -1,0 +1,10 @@
+# Test data
+Cargo(Programador):
+    nome:           Programador
+
+Usuario(Enrico):
+    nome:           Enrico Navarro
+    cpf:            12897543655
+    dataNascimento: 1994-04-04
+    sexo:           Masculino
+    cargo:          Programador

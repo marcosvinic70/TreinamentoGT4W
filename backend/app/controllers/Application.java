@@ -1,5 +1,13 @@
 package controllers;
 
+import play.*;
+import play.Play;
+import play.mvc.*;
+
+import java.util.*;
+
+import models.*;
+
 public class Application extends BaseController{
 
 	public static void teste() {
@@ -13,8 +21,8 @@ public class Application extends BaseController{
 		
 	}
 	public static void usuarios() {
-
-		render();
+	    List<Usuario> listaUser = Usuario.findAll();
+		render(listaUser);
 	}
 
 	public static void cargos() {
