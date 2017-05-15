@@ -13,7 +13,7 @@ public class Usuario extends Model {
     public String sexo;
     public Date dataCadastro;
 
-    @OneToMany
+    @ManyToOne
     public Cargo cargo;
 
     @ManyToMany
