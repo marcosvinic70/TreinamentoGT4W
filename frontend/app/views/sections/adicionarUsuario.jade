@@ -26,23 +26,22 @@
                             label(for="dataNascimento") Data de Nascimento:
                             input.form-control(type="date", name="dataNascimento", placeholder = "DD/MM/AAAA",id="dataNascimento")
                         form.form-group
-                            .panel
-                                .panel-heading
-                                    label(for="perfis") Perfis:
-                                .panel-body
-                                    .panel
-                                        input(type="checkbox", name="perfis", value="perfil1")
-                                        | Perfil 1
-                                        br
-                                        input(type="checkbox", name="perfis", value="perfil2")
-                                        | Perfil 2
-                                        br
-                                        input(type="checkbox", name="perfis", value="perfil3")
-                                        | Perfil 3
-                                    .input-group
-                                        span.input-group-addon
-                                            input(type="checkbox")
-                                        input.form-control(type="text", placeholder="Novo Perfil de Usuário")
+							.panel
+								.panel-body
+									label(for="perfis") Perfis:
+									.panel
+										input(type="checkbox", name="perfis", value="perfil1")
+										| Perfil 1
+									    br
+									    input(type="checkbox", name="perfis", value="perfil2")
+									    | Perfil 2
+									    br
+									    input(type="checkbox", name="perfis", value="perfil3")
+									    | Perfil 3
+									.input-group
+									    span.input-group-addon
+									        input(type="checkbox")
+									    input.form-control(type="text", placeholder="Novo Perfil de Usuário")
 
                     div.actions
                         input.form-control(type="submit", value="Cadastrar Novo Usuário")

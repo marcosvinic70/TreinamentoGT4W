@@ -1,7 +1,4 @@
-#panelprincipal {
-  min-height: 600px;
-}
-#panelprincipal .input {
+.input {
   margin-top: 10px;
   margin-bottom: 10px;
 }
