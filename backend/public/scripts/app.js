@@ -24,6 +24,10 @@
                     templateUrl: 'views/sections/perfis.html',
                     controller: 'PerfisController',
                 })
+                .when("/adicionarUsuario", {
+                                    templateUrl: 'views/sections/adicionarUsuario.html',
+                                    controller: 'AdicionarUsuarioController',
+                                })
 				.otherwise({
 					redirectTo: '/',
 					templateUrl: 'views/sections/inicial.html',

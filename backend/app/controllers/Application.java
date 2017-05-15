@@ -24,4 +24,8 @@ public class Application extends BaseController{
     public static void perfis() {
 	    render();
     }
+
+    public static void adicionarUsuario() {
+	    render();
+    }
 }

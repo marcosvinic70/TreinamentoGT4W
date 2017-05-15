@@ -1,0 +1,56 @@
+
+<div class="container">
+  <div id="panelprincipal" class="panel panel-default">
+    <div class="panel panel-heading">
+      <div class="panel-body">
+        <form name="buscaUsuarios" method="get" action="">
+          <h4>Adicionar um novo usuário:</h4>
+          <div class="input">
+            <form class="form-group">
+              <label for="nome">Nome:</label>
+              <input type="text" name="nomeUsuario" placeholder="Nome do novo Usuário" id="nome" class="form-control"/>
+            </form>
+            <form class="form-group">
+              <label for="cpf">CPF:</label>
+              <input type="text" name="cpf" placeholder="CPF do novo Usuário" id="cpf" class="form-control"/>
+            </form>
+            <form class="form-group">
+              <label for="cargo">Cargo:</label>
+              <input type="text" name="cargo" placeholder="Cargo do Novo Usuário" id="cargo" class="form-control"/>
+            </form>
+            <form class="form-group">
+              <label for="sexo">Sexo:</label><br/>
+              <input type="radio" name="sexo" value="Masculino"/>Masculino<br/>
+              <input type="radio" name="sexo" value="Feminino"/>Feminino
+            </form>
+            <form class="form-group">
+              <label for="dataNascimento">Data de Nascimento:</label>
+              <input type="date" name="dataNascimento" placeholder="DD/MM/AAAA" id="dataNascimento" class="form-control"/>
+            </form>
+            <form class="form-group">
+              <div class="panel">
+                <div class="panel-heading">
+                  <label for="perfis">Perfis:</label>
+                </div>
+                <div class="panel-body">
+                  <div class="panel">
+                    <input type="checkbox" name="perfis" value="perfil1"/>Perfil 1<br/>
+                    <input type="checkbox" name="perfis" value="perfil2"/>Perfil 2<br/>
+                    <input type="checkbox" name="perfis" value="perfil3"/>Perfil 3
+                  </div>
+                  <div class="input-group"><span class="input-group-addon">
+                      <input type="checkbox"/></span>
+                    <input type="text" placeholder="Novo Perfil de Usuário" class="form-control"/>
+                  </div>
+                </div>
+              </div>
+            </form>
+          </div>
+          <div class="actions">
+            <input type="submit" value="Cadastrar Novo Usuário" class="form-control"/>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

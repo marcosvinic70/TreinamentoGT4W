@@ -1,33 +1,29 @@
 
 <div class="container">
-  <div class="panel panel-default">
-    <div class="panel panel-default">
-      <div class="panel-heading">
-        <div class="panel-body">
-          <form>
-            <form class="form-group">
-              <label for="perfil">
-                <p>Buscar Perfil de Usuário:</p>
-              </label>
-              <div class="input">
-                <input type="text" id="perfilBusca" value="Nome do Perfil de Usuário" class="form-control"/>
-              </div>
-              <div class="actions">
-                <button type="submit" class="btn btn-default">
-                  <p>Buscar</p>
-                </button>
-              </div>
-            </form>
+  <div id="panelprincipal" class="panel panel-default">
+    <div class="panel panel-heading">
+      <div class="panel-body">
+        <form name="buscaPerfis" method="get" action="">
+          <form class="form-group">
+            <div class="input">
+              <h4>Buscar Perfis de Usuário:</h4>
+              <input type="text" name="nomePerfil" placeholder="Nome do Perfil de Usuário" class="form-control"/>
+            </div>
+            <div class="actions">
+              <input type="submit" value="Procurar" class="form-control"/>
+            </div>
           </form>
-        </div>
+        </form>
       </div>
     </div>
     <div class="panel panel-default">
-      <div class="row">
-        <div class="col-sm-11">
-          <h2>Conteúdo Busca Perfis</h2>
+      <div class="panel-body">
+        <div class="row">
+          <div class="col-sm-11">
+            <h1>Conteúdo Busca</h1>
+          </div>
+          <div class="col-sm-1"><a href="#/" class="glyphicon glyphicon-edit"></a><a href="#/" class="glyphicon glyphicon-minus"></a></div>
         </div>
-        <div class="col-sm-1"><a href="#/" class="glyphicon glyphicon-plus"></a><a href="#/" class="glyphicon glyphicon-edit"></a></div>
       </div>
     </div>
   </div>

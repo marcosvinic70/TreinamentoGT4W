@@ -13,6 +13,7 @@ module.exports = function(grunt) {
 			'sections/usuarios.jade',
 			'sections/cargos.jade',
 			'sections/perfis.jade',
+			'sections/adicionarUsuario.jade',
 
 		]
 	};

@@ -1,0 +1,48 @@
+.container
+    #panelprincipal.panel.panel-default
+        .panel.panel-heading
+            .panel-body
+                form(name="buscaUsuarios", method="get" , action = "")
+                    h4 Adicionar um novo usuário:
+                    div.input
+                        form.form-group
+                            label(for="nome") Nome:
+                            input.form-control(type="text", name="nomeUsuario", placeholder = "Nome do novo Usuário",id = "nome")
+                        form.form-group
+                            label(for="cpf") CPF:
+                            input.form-control(type="text", name="cpf", placeholder = "CPF do novo Usuário",id="cpf")
+                        form.form-group
+                            label(for="cargo") Cargo:
+                            input.form-control(type="text", name="cargo", placeholder = "Cargo do Novo Usuário",id="cargo")
+                        form.form-group
+                            label(for="sexo") Sexo:
+                            br
+                            input(type="radio", name="sexo", value="Masculino")
+                            | Masculino
+                            br
+                            input(type="radio", name="sexo", value="Feminino")
+                            | Feminino
+                        form.form-group
+                            label(for="dataNascimento") Data de Nascimento:
+                            input.form-control(type="date", name="dataNascimento", placeholder = "DD/MM/AAAA",id="dataNascimento")
+                        form.form-group
+                            .panel
+                                .panel-heading
+                                    label(for="perfis") Perfis:
+                                .panel-body
+                                    .panel
+                                        input(type="checkbox", name="perfis", value="perfil1")
+                                        | Perfil 1
+                                        br
+                                        input(type="checkbox", name="perfis", value="perfil2")
+                                        | Perfil 2
+                                        br
+                                        input(type="checkbox", name="perfis", value="perfil3")
+                                        | Perfil 3
+                                    .input-group
+                                        span.input-group-addon
+                                            input(type="checkbox")
+                                        input.form-control(type="text", placeholder="Novo Perfil de Usuário")
+
+                    div.actions
+                        input.form-control(type="submit", value="Cadastrar Novo Usuário")
