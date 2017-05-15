@@ -6,7 +6,7 @@
 		.module('appModule')
 		.controller('AdicionarUsuarioController', function($scope, adicionarUsuarioService) {
 
-			adiconarUsuarioService.adicionarUsuario().success(function(){
+			adicionarUsuarioService.adicionarUsuario().success(function(){
 
 			});
 
