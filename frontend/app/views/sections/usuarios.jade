@@ -1,1 +1,18 @@
-p USUARIOS
+.container
+	#panelprincipal.panel.panel-default
+		.panel.panel-heading
+			.panel-body
+				form(name="busca", method="get" , action = "")
+					form.form-group
+						div.input
+							p Buscar Usuários:
+							input.form-control(type="text", name="nomeUsuario", value = "Nome do Usuário")
+						div.actions
+							input.form-control(type="submit", value="Procurar")
+		.panel.panel-default
+			.panel-body
+				div.row
+					div.col-sm-11
+
+					div.col-sm-1
+						a.glyphicon.glyphicon-plus(href="#/")
