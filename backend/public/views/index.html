@@ -3,7 +3,9 @@
   <head>
     <meta charset="UTF-8">
     <link href="styles/main.css" rel="stylesheet">
-    <link href="styles/principal.css" rel="stylesheet">
+    <link href="styles/footer.css" rel="stylesheet">
+    <link href="styles/header.css" rel="stylesheet">
+    <link href="styles/principal.css" rel="stylesheet"><link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <script src="scripts/jquery.min.js"></script>
     <script src="scripts/angular.min.js"></script>
     <script src="scripts/angular-route.min.js"></script>
@@ -16,12 +18,34 @@
   <body ng-app="appModule" ng-controller="AppCtrl" ng-cloak>
     <!--Header-->
     <header>
-      <h1>Header</h1>
+      <div class="container">
+        <!-- Static navbar-->
+        <nav class="navbar-inverse navbar-static-top">
+          <div class="container-fluid">
+            <div class="navbar-header">
+              <button type="button" data-toggle="collapse" data-target="#myNavbar" class="navbar-toggle"><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button><a href="#/" class="navbar-brand">Sistema de Gerenciamento de Usuários</a>
+            </div>
+            <div id="myNavbar" class="collapse navbar-collapse">
+              <ul class="nav navbar-nav">
+                <li class="active"><a href="#/">Home</a></li>
+                <li><a href="#/usuarios">Usuários</a></li>
+                <li><a href="#/cargos">Cargos</a></li>
+                <li><a href="#/perfis">Perfis de Usuários</a></li>
+              </ul>
+              <ul class="nav navbar-nav navbar-right">
+                <li><a href="#/help">Help</a></li>
+              </ul>
+            </div>
+          </div>
+        </nav>
+      </div>
     </header>
     <!--Conteúdo da página-->
     <div ng-view></div>
     <!--Footer-->
-    <h1>Footer</h1>
+    <div class="footer container-fluid text-center">
+      <p>FOOTER</p>
+    </div>
   </body>
   <script src="scripts/app.js"></script>
   <script src="scripts/utils/request.js"></script>

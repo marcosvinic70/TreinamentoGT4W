@@ -1,0 +1,24 @@
+<<<<<<< HEAD
+h1 Conteúdo Página Inicial
+
+center
+	div
+		a(href="#usuarios")
+			button(type="button") USUARIOS
+	br
+	div
+		a(href="#cargos")
+			button(type="button") CARGOS DOS USUARIOS
+	br   
+	div
+		a(href="#perfis")
+			button(type="button") PERFIS DE USUARIOS
+	
+	
+=======
+.container-fluid.text-center
+	.row.content
+		.col-sm-8.text-left
+			h1 Conteúdo Página Inicial
+			p ta indo...
+>>>>>>> a913b614dbbd7e14cc1a2f49dfb8c68e60cda1a6
