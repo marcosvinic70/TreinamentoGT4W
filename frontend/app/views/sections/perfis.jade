@@ -1,20 +1,34 @@
 .container
-    #panelprincipal.panel.panel-default
-        .panel.panel-heading
-            .panel-body
-                form(name="buscaPerfis", method="get" , action = "")
-                    form.form-group
-                        div.input
-                            h4 Buscar Perfis de Usuário:
-                            input.form-control(type="text", name="nomePerfil", placeholder = "Nome do Perfil de Usuário")
-                        div.actions
-                            input.form-control(type="submit", value="Procurar")
-        .panel.panel-default
-            .panel-body
-                div.row
-                    div.col-sm-11
-                        h1 Conteúdo Busca
-                    div.col-sm-1
-                        a.glyphicon.glyphicon-edit(href="#/",title="Adicionar Perfil de Usuário")
-                        a.glyphicon.glyphicon-trash(href="#/",title="Remover Perfil de Usuário")
+    .panel.panel-group.panel-default
+        .panel-body
+            h4 Buscar Perfis de Usuário:
+            .row
+                .navbar-form.navbar-left(method="POST", action)
+                    form(name="buscaPerfis", method="get" , action = "")
+                        form.form-group
+                            div.input
+                                input.form-control(type="text", name="nomePerfil", placeholder = "Nome do Perfil de Usuário")
+                                input.form-control(type="submit", value="Procurar")
+    .panel.panel-group.panel-default
+        .panel-body
+            .panel.panel-default
+                table.table.table-hover
+                    thead.thead-inverse
+                        tr
+                            th	Id
+                            th	Nome
+                            th(width="50px")
+                            th(width="10px")
+                            th(width="10px")
+                            th(width="10px")
+                    tbody
+                        tr
+                            td	valordeid
+                            td	valornome
+                            td
+                            td(width="10px")
+                            td(width="10px")
+                                span.glyphicon.glyphicon-edit(href="#/",title="Editar Perfil de Usuário")
+                            td(width="10px")
+                                span.glyphicon.glyphicon-trash(href="#/",title="Remover Perfil de Usuário")
 

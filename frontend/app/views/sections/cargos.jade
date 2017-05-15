@@ -1,19 +1,33 @@
 .container
-    #panelprincipal.panel.panel-default
-        .panel.panel-heading
-            .panel-body
-                form(name="buscaCargos", method="get" , action = "")
-                    form.form-group
-                        div.input
-                            h4 Buscar Cargos:
-                            input.form-control(type="text", name="nomeCargo", placeholder = "Nome do Cargo")
-                        div.actions
-                            input.form-control(type="submit", value="Procurar")
-        .panel.panel-default
-            .panel-body
-                div.row
-                    div.col-sm-11
-                        h1 Conteúdo Busca
-                    div.col-sm-1
-                        a.glyphicon.glyphicon-edit(href="#/",title="Editar Cargo")
-                        a.glyphicon.glyphicon-trash(href="#/",title="Remover Cargo")
+    .panel.panel-group.panel-default
+        .panel-body
+            h4 Buscar Cargos:
+            .row
+                .navbar-form.navbar-left(method="POST", action)
+                    form(name="buscaCargos", method="get" , action = "")
+                        form.form-group
+                            div.input
+                                input.form-control(type="text", name="nomeCargo", placeholder = "Nome do Cargo")
+                                input.form-control(type="submit", value="Procurar")
+    .panel.panel-group.panel-default
+        .panel-body
+            .panel.panel-default
+                table.table.table-hover
+                    thead.thead-inverse
+                        tr
+                            th	Id
+                            th	Nome
+                            th(width="50px")
+                            th(width="10px")
+                            th(width="10px")
+                            th(width="10px")
+                    tbody
+                        tr
+                            td	valordeid
+                            td	valornome
+                            td
+                            td(width="10px")
+                            td(width="10px")
+                                span.glyphicon.glyphicon-edit(href="#/",title="Editar Cargo")
+                            td(width="10px")
+                                span.glyphicon.glyphicon-trash(href="#/",title="Remover Cargo")
