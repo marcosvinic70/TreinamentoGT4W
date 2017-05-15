@@ -9,12 +9,51 @@
 							input.form-control(type="text", name="nomeUsuario", placeholder = "Nome do Usuário")
 						div.actions
 							input.form-control(type="submit", value="Procurar")
-		.panel.panel-default
-			.panel-body
-				div.row
-					div.col-sm-11
-						listar-usuarios
-					div.col-sm-1
-						a.glyphicon.glyphicon-plus(href="#/adicionarUsuario",title="Cadastrar Usuário")
-						a.glyphicon.glyphicon-edit(href="#/",title="Editar Usuário")
-						a.glyphicon.glyphicon-trash(href="#/",title="Remover Usuário")
+	.panel.panel-group.panel-default
+		.panel-body
+			h4 Buscar Usuários:
+			.row
+				.navbar-form.navbar-left(method="POST", action)
+					form(name="buscaUsuarios", method="get" , action = "")
+						form.form-group
+							div.input
+								input.form-control(type="text", name="nomeUsuario", placeholder = "Nome do Usuário")
+								
+								input.form-control(type="submit", value="Procurar")
+	.panel.panel-group.panel-default
+		.panel-body
+			.panel.panel-default
+				table.table.table-hover
+					thead.thead-inverse
+						tr
+							th	Id
+							th	Nome
+							th	CPF
+							th	Cargo
+							th(width="50px")
+							th(width="10px")
+							th(width="10px")
+							th(width="10px")
+					tbody
+						tr
+							td	valordeid
+							td	valornome
+							td	valorcpf
+							td	valorcargo
+							td
+							td(width="10px")
+							td(width="10px")
+								span.glyphicon.glyphicon-edit(href="#/",title="Editar Usuário")
+							td(width="10px")
+								span.glyphicon.glyphicon-trash(href="#/",title="Remover Usuário")
+						tr
+							td
+							td
+							td
+							td
+							td
+							td
+							td
+							td
+								span.glyphicon.glyphicon-plus(href="#/adicionarUsuario",title="Cadastrar Usuário")
+
