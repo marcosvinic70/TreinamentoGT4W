@@ -4,7 +4,7 @@
   "version": "0.0.1",
   "devDependencies": {
     "caniuse-db": "^1.0.30000214",
-    "grunt": "~1.0.1",
+    "grunt": "^1.0.1",
     "grunt-autoprefixer": "^3.0.3",
     "grunt-bower-task": "^0.4.0",
     "grunt-contrib-clean": "^0.4.1",
