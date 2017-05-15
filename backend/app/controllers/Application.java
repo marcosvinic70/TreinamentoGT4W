@@ -13,7 +13,15 @@ public class Application extends BaseController{
 		
 	}
 	public static void usuarios() {
-		
+
 		render();
 	}
+
+	public static void cargos() {
+	    render();
+    }
+
+    public static void perfis() {
+	    render();
+    }
 }

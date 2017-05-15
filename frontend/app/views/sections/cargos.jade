@@ -1,0 +1,21 @@
+.container
+    .panel.panel-default
+        .panel.panel-default
+            .panel-heading
+                .panel-body
+                    form
+                        form.form-group
+                            label(for="cargo")
+                                p Buscar Cargos:
+                            div.input
+                                input.form-control(type="text",id="cargoBusca",value="Nome do Cargo")
+                            div.actions
+                                button.btn.btn-default(type="submit")
+                                    p Buscar
+        .panel.panel-default
+            div.row
+                div.col-sm-11
+                    h2 Conteúdo Busca Cargos
+                div.col-sm-1
+                    a.glyphicon.glyphicon-plus(href="#/")
+                    a.glyphicon.glyphicon-edit(href="#/")

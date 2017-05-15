@@ -16,6 +16,14 @@
 					templateUrl: 'views/sections/usuarios.html',
 					controller: 'UsuariosController',
 				})
+                .when("/cargos", {
+                    templateUrl: 'views/sections/cargos.html',
+                    controller: 'CargosController',
+                })
+                .when("/perfis", {
+                    templateUrl: 'views/sections/perfis.html',
+                    controller: 'PerfisController',
+                })
 				.otherwise({
 					redirectTo: '/',
 					templateUrl: 'views/sections/inicial.html',
