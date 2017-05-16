@@ -2,9 +2,19 @@
 Cargo(Programador):
     nome:           Programador
 
+PerfilUsuario(backend):
+    nome:           backend
+
+PerfilUsuario(frontend):
+    nome:           frontend
+
 Usuario(Enrico):
     nome:           Enrico Navarro
     cpf:            12897543655
     dataNascimento: 1994-04-04
+    dataCadastro:   2017-05-16
     sexo:           Masculino
     cargo:          Programador
+    listaPerfil:
+              - backend
+              - frontend

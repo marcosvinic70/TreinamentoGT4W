@@ -1,5 +1,6 @@
 package models;
 
+import java.math.BigInteger;
 import java.util.*;
 import javax.persistence.*;
 
@@ -8,7 +9,7 @@ import play.db.jpa.*;
 @Entity
 public class Usuario extends Model {
     public String nome;
-    public int cpf;
+    public Long cpf;
     public Date dataNascimento;
     public String sexo;
     public Date dataCadastro;
@@ -19,7 +20,7 @@ public class Usuario extends Model {
     @ManyToMany
     public List<PerfilUsuario> listaPerfil;
 
-    public Usuario(String nome, int cpf, String cargo, List<String>perfis, String sexo, Date dataNascimento) {
+    public Usuario(String nome, Long cpf, String cargo, List<String>perfis, String sexo, Date dataNascimento) {
         this.nome = nome;
         this.cpf = cpf;
         this.cargo = new Cargo(cargo);
@@ -42,7 +43,7 @@ public class Usuario extends Model {
 
     }
 
-    public void editar(String nome, int cpf, String cargo, List<String>perfis, String sexo, Date dataNascimento) {
+    public void editar(String nome, Long cpf, String cargo, List<String>perfis, String sexo, Date dataNascimento) {
         this.nome = nome;
         this.cpf = cpf;
         this.cargo = new Cargo(cargo);
