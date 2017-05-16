@@ -6,9 +6,9 @@
 		.module('appModule')
 		.service('inicialService', function(request) {
 
-			this.teste = function() {
+			this.inicial = function() {
 
-				return request.get("/teste");
+				return request.get("");
 			};
 
 	});

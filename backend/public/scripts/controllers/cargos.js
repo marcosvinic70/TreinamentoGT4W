@@ -6,8 +6,8 @@
 		.module('appModule')
 		.controller('CargosController', function($scope, cargosService) {
 
-			cargosService.cargos().success(function(){
-
+			cargosService.cargos().success(function(result){
+				$scope.listaCargos = result;
 			});
 
 		});

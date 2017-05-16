@@ -8,10 +8,6 @@
 		function($routeProvider){
 
 			$routeProvider
-				.when('/', {
-					templateUrl: 'views/sections/inicial.html',
-					controller: 'InicialController',
-				})
 				.when("/usuarios", {
 					templateUrl: 'views/sections/usuarios.html',
 					controller: 'UsuariosController',
@@ -25,9 +21,9 @@
                     controller: 'PerfisController',
                 })
                 .when("/adicionarUsuario", {
-                                    templateUrl: 'views/sections/adicionarUsuario.html',
-                                    controller: 'AdicionarUsuarioController',
-                                })
+                    templateUrl: 'views/sections/adicionarUsuario.html',
+                    controller: 'AdicionarUsuarioController',
+                })
 				.otherwise({
 					redirectTo: '/',
 					templateUrl: 'views/sections/inicial.html',

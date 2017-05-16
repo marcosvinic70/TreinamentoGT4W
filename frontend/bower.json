@@ -1,16 +1,16 @@
 {
-  "name": "Treinamento",
-  "version": "0.0.1",
-  "dependencies": {
-    "angular": "~1.4.9",
-    "angular-bootstrap": "0.14.2",
-    "angular-route": "1.4.9",
-    "bootstrap": "3.3.5",
-    "jquery": "2.1.4",
-    "underscore": "~1.8.3",
-    "font-awesome": "~4.4.0"
-  },
-  "resolutions": {
-    "angular": "~1.6.3"
-  }
+	"name": "Treinamento",
+	"version": "0.0.1",
+	"dependencies": {
+		"angular": "~1.4.9",
+		"angular-bootstrap": "0.14.2",
+		"angular-route": "1.4.9",
+		"bootstrap": "3.3.5",
+		"jquery": "2.1.4",
+		"underscore": "~1.8.3",
+		"font-awesome": "~4.4.0"
+	},
+	"resolutions": {
+		"angular": "~1.6.3"
+	}
 }

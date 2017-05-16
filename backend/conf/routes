@@ -3,7 +3,16 @@
 # ~~~~
 
 
-GET     /teste                                 Application.teste
+GET     /usuarios								Application.listarUsuarios
+
+
+
+
+
+
+
+
+
 
 
 
