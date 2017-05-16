@@ -17,11 +17,13 @@ public class Application extends BaseController{
 	}
 
 	public static void index() {
+		System.out.println("teste");
 		render();
 		
 	}
 	public static void usuarios() {
 	    List<Usuario> listaUser = Usuario.findAll();
+	    System.out.println(listaUser.get(0).nome);
 		render(listaUser);
 	}
 
