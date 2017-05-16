@@ -12,7 +12,6 @@
 	.panel.panel-group.panel-default
 		.panel-body
 			.panel.panel-default
-				p {{listaUsuarios}}
 				table.table.table-hover
 					thead.thead-inverse
 						tr
@@ -33,9 +32,9 @@
 							td
 							td(width="10px")
 							td(width="10px")
-								span.glyphicon.glyphicon-edit(href="#/",title="Editar Usuário")
+								a.span.glyphicon.glyphicon-edit(href="#/",title="Editar Usuário")
 							td(width="10px")
-								span.glyphicon.glyphicon-trash(href="#/",title="Remover Usuário")
+								a.span.glyphicon.glyphicon-trash(href="#/",title="Remover Usuário",style="color:red")
 						tr
 							td
 							td
@@ -45,5 +44,5 @@
 							td
 							td
 							td
-								span.glyphicon.glyphicon-plus(href="#/adicionarUsuario",title="Cadastrar Usuário")
+								a.span.glyphicon.glyphicon-plus(href="#/adicionarUsuario",title="Cadastrar Usuário",style="color:green")
 
