@@ -3,57 +3,46 @@
   <div id="panelprincipal" class="panel panel-default">
     <div class="panel panel-heading">
       <div class="panel-body">
-        <form name="buscaUsuarios" method="get" action="">
+        <form name="adicionarUsuarios" method="get" ng-submit="cadastrarUsuario()">
           <h4>Adicionar um novo usuário:</h4>
           <div class="input">
-            <form class="form-group">
-              <label for="nome">Nome:</label>
-              <input type="text" name="nomeUsuario" placeholder="Nome do novo Usuário" id="nome" class="form-control"/>
-            </form>
-            <form class="form-group">
-              <label for="cpf">CPF:</label>
-              <input type="text" name="cpf" placeholder="CPF do novo Usuário" id="cpf" class="form-control"/>
-            </form>
-            <div class="panel panel-default">
-              <div class="panel-body">
-                <label for="cargo">Cargo:
-                  <div class="panel">
-                    <input type="radio" name="cargo" value="cargo1"/>Cargo 1<br/>
-                    <input type="radio" name="cargo" value="cargo2"/>Cargo 2<br/>
-                    <input type="radio" name="cargo" value="cargo3"/>Cargo 3
-                  </div>
-                  <div class="input-group"><span class="input-group-addon">
-                      <input type="radio" name="cargo"/></span>
-                    <input type="text" placeholder="Novo Cargo" class="form-control"/>
-                  </div>
-                </label>
+            <div class="form-group">
+              <label for="nome">Nome*:</label>
+              <input type="text" name="nomeUsuario" placeholder="Nome do novo Usuário" id="nome" ng-model="formulario.nome" class="form-control"/>
+            </div>
+            <div class="form-group">
+              <label for="cpf">CPF*:</label>
+              <input type="text" name="cpf" placeholder="CPF do novo Usuário" id="cpf" ng-model="formulario.cpf" class="form-control"/>
+            </div>
+            <div class="form-group">
+              <label for="cargo">Cargo*:</label>
+              <div ng-repeat="cargo in listaCargos">
+                <input type="radio" name="cargo" value="{{cargo.nome}}" ng-model="formulario.cargo"/>{{cargo.nome}}
+              </div>
+              <div class="input-group"><span class="input-group-addon">
+                  <input type="radio" name="cargo"/></span>
+                <input type="text" placeholder="Novo Cargo" ng-model="formulario.cargoNovo" class="form-control"/>
               </div>
             </div>
-            <form class="form-group">
+            <div class="form-group">
               <label for="sexo">Sexo:</label><br/>
-              <input type="radio" name="sexo" value="Masculino"/>Masculino<br/>
-              <input type="radio" name="sexo" value="Feminino"/>Feminino
-            </form>
-            <form class="form-group">
+              <input type="radio" name="sexo" value="Masculino" ng-model="formulario.sexo"/>Masculino<br/>
+              <input type="radio" name="sexo" value="Feminino" ng-model="formulario.sexo"/>Feminino
+            </div>
+            <div class="form-group">
               <label for="dataNascimento">Data de Nascimento:</label>
-              <input type="date" name="dataNascimento" placeholder="DD/MM/AAAA" id="dataNascimento" class="form-control"/>
-            </form>
-            <form class="form-group">
-              <div class="panel panel-default">
-                <div class="panel-body">
-                  <label for="perfis">Perfis:</label>
-                  <div class="panel">
-                    <input type="checkbox" name="perfis" value="perfil1"/>Perfil 1<br/>
-                    <input type="checkbox" name="perfis" value="perfil2"/>Perfil 2<br/>
-                    <input type="checkbox" name="perfis" value="perfil3"/>Perfil 3
-                  </div>
-                  <div class="input-group"><span class="input-group-addon">
-                      <input type="checkbox"/></span>
-                    <input type="text" placeholder="Novo Perfil de Usuário" class="form-control"/>
-                  </div>
-                </div>
+              <input type="date" name="dataNascimento" placeholder="DD/MM/AAAA" id="dataNascimento" ng-model="formulario.dataNascimento" class="form-control"/>
+            </div>
+            <div class="form-group">
+              <label for="perfis">Perfis:</label>
+              <div ng-repeat="perfil in listaPerfis">
+                <input type="checkbox" name="perfis" value="{{perfil.nome}}" ng-model="perfisModelo"/>{{perfil.nome}}
               </div>
-            </form>
+              <div class="input-group"><span class="input-group-addon">
+                  <input type="checkbox"/></span>
+                <input type="text" placeholder="Novo Perfil de Usuário" ng-model="perfisModelo" class="form-control"/>
+              </div>
+            </div>
           </div>
           <div class="actions">
             <input type="submit" value="Cadastrar Novo Usuário" class="form-control"/>

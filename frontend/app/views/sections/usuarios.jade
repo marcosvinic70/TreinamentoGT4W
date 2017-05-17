@@ -24,11 +24,11 @@
 							th(width="10px")
 							th(width="10px")
 					tbody
-						tr
-							td	{{listaUsuarios[0].id}}
-							td	{{listaUsuarios[0].nome}}
-							td	{{listaUsuarios[0].cpf}}
-							td	{{listaUsuarios[0].cargo.nome}}
+						tr(ng-repeat=("usuario in listaUsuarios"))
+							td	{{usuario.id}}
+							td	{{usuario.nome}}
+							td	{{usuario.cpf}}
+							td	{{usuario.cargo.nome}}
 							td
 							td(width="10px")
 							td(width="10px")

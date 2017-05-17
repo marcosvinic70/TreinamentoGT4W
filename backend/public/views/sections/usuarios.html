@@ -34,11 +34,11 @@
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <td>	{{listaUsuarios[0].id}}</td>
-              <td>	{{listaUsuarios[0].nome}}</td>
-              <td>	{{listaUsuarios[0].cpf}}</td>
-              <td>	{{listaUsuarios[0].cargo.nome}}</td>
+            <tr ng-repeat="usuario in listaUsuarios">
+              <td>	{{usuario.id}}</td>
+              <td>	{{usuario.nome}}</td>
+              <td>	{{usuario.cpf}}</td>
+              <td>	{{usuario.cargo.nome}}</td>
               <td></td>
               <td width="10px"></td>
               <td width="10px"><a href="#/" title="Editar Usuário" class="span glyphicon glyphicon-edit"></a></td>
