@@ -3,7 +3,8 @@
 # ~~~~
 
 
-GET     /teste                                 Application.teste
+GET     /index                                 Application.index
+GET     /usuarios                              Application.usuarios
 
 
 

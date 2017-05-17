@@ -12,6 +12,10 @@
 					templateUrl: 'views/sections/inicial.html',
 					controller: 'InicialController',
 				})
+				.when('/index', {
+					templateUrl: 'views/sections/inicial.html',
+					controller: 'InicialController',
+				})
 				.when("/usuarios", {
 					templateUrl: 'views/sections/usuarios.html',
 					controller: 'UsuariosController',
