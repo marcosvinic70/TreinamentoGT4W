@@ -3,6 +3,9 @@
 # ~~~~
 
 GET     /usuarios								Application.listarUsuarios
+GET     /cargos 								Application.listarCargos
+GET     /perfis 								Application.listarPerfis
+GET     /cadastrarUsuario                       Application.cadastrarUsuario
 
 
 

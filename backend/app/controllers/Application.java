@@ -15,5 +15,18 @@ public class Application extends BaseController{
 		renderJSON(listaUser);
 	}
 
+	public static void listarCargos() {
+		List<Cargo> listaCargos = Cargo.findAll();
+		renderJSON(listaCargos);
+	}
+
+	public static void listarPerfis() {
+		List<PerfilUsuario> listaPerfis = PerfilUsuario.findAll();
+		renderJSON(listaPerfis);
+	}
+
+	public static void cadastrarUsuario() {
+
+	}
 
 }

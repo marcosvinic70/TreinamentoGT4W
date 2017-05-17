@@ -2,60 +2,44 @@
     #panelprincipal.panel.panel-default
         .panel.panel-heading
             .panel-body
-                form(name="buscaUsuarios", method="get" , action = "")
+                form(name="adicionarUsuarios", method="get", ng-submit="cadastrarUsuario()")
                     h4 Adicionar um novo usuário:
                     div.input
-                        form.form-group
-                            label(for="nome") Nome:
-                            input.form-control(type="text", name="nomeUsuario", placeholder = "Nome do novo Usuário",id = "nome")
-                        form.form-group
-                            label(for="cpf") CPF:
-                            input.form-control(type="text", name="cpf", placeholder = "CPF do novo Usuário",id="cpf")
-                        .panel.panel-default
-                            .panel-body
-                                label(for="cargo") Cargo:
-                                    .panel
-                                        input(type="radio", name="cargo", value="cargo1")
-                                        | Cargo 1
-                                        br
-                                        input(type="radio", name="cargo", value="cargo2")
-                                        | Cargo 2
-                                        br
-                                        input(type="radio", name="cargo", value="cargo3")
-                                        | Cargo 3
-                                    .input-group
-                                        span.input-group-addon
-                                            input(type="radio", name = "cargo")
-                                        input.form-control(type="text", placeholder="Novo Cargo")
-                        form.form-group
+                        .form-group
+                            label(for="nome") Nome*:
+                            input.form-control(type="text", name="nomeUsuario", placeholder = "Nome do novo Usuário",id = "nome", ng-model="formulario.nome")
+                        .form-group
+                            label(for="cpf") CPF*:
+                            input.form-control(type="text", name="cpf", placeholder = "CPF do novo Usuário",id="cpf", ng-model="formulario.cpf")
+                        .form-group
+                            label(for="cargo") Cargo*:
+                            div(ng-repeat=("cargo in listaCargos"))
+                                input(type="radio", name="cargo", value="{{cargo.nome}}", ng-model="formulario.cargo")
+                                | {{cargo.nome}}
+                            .input-group
+                                span.input-group-addon
+                                    input(type="radio", name = "cargo")
+                                input.form-control(type="text", placeholder="Novo Cargo", ng-model="formulario.cargoNovo")
+                        .form-group
                             label(for="sexo") Sexo:
                             br
-                            input(type="radio", name="sexo", value="Masculino")
+                            input(type="radio", name="sexo", value="Masculino", ng-model="formulario.sexo")
                             | Masculino
                             br
-                            input(type="radio", name="sexo", value="Feminino")
+                            input(type="radio", name="sexo", value="Feminino", ng-model="formulario.sexo")
                             | Feminino
-                        form.form-group
+                        .form-group
                             label(for="dataNascimento") Data de Nascimento:
-                            input.form-control(type="date", name="dataNascimento", placeholder = "DD/MM/AAAA",id="dataNascimento")
-                        form.form-group
-
-                            .panel.panel-default
-                                .panel-body
-                                    label(for="perfis") Perfis:
-                                    .panel
-                                        input(type="checkbox", name="perfis", value="perfil1")
-                                        | Perfil 1
-                                        br
-                                        input(type="checkbox", name="perfis", value="perfil2")
-                                        | Perfil 2
-                                        br
-                                        input(type="checkbox", name="perfis", value="perfil3")
-                                        | Perfil 3
-                                    .input-group
-                                        span.input-group-addon
-                                            input(type="checkbox")
-                                        input.form-control(type="text", placeholder="Novo Perfil de Usuário")
+                            input.form-control(type="date", name="dataNascimento", placeholder = "DD/MM/AAAA",id="dataNascimento", ng-model="formulario.dataNascimento")
+                        .form-group
+                            label(for="perfis") Perfis:
+                            div(ng-repeat=("perfil in listaPerfis"))
+                                input(type="checkbox", name="perfis", value="{{perfil.nome}}", ng-model="perfisModelo")
+                                | {{perfil.nome}}
+                            .input-group
+                                span.input-group-addon
+                                    input(type="checkbox")
+                                input.form-control(type="text", placeholder="Novo Perfil de Usuário", ng-model="perfisModelo")
 
                     div.actions
                         input.form-control(type="submit", value="Cadastrar Novo Usuário")

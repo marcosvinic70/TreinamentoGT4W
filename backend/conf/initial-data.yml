@@ -2,11 +2,38 @@
 Cargo(Programador):
     nome:           Programador
 
+Cargo(Gerente de Projeto):
+    nome:           Gerente de Projeto
+
+Cargo(Assistente Administrativo):
+    nome:           Assistente Administrativo
+
+Cargo(Assistente de Serviços Gerais):
+    nome:           Assistente de Serviços Gerais
+
 PerfilUsuario(backend):
     nome:           backend
 
 PerfilUsuario(frontend):
     nome:           frontend
+
+PerfilUsuario(Full-Stack):
+    nome:           Full-Stack
+
+PerfilUsuario(Limpeza):
+    nome:           Limpeza
+
+PerfilUsuario(Cozinha):
+    nome:           Cozinha
+
+PerfilUsuario(Manutenção):
+    nome:           Manutenção
+
+PerfilUsuario(Desenvolvimento Ágil):
+    nome:           Desenvolvimento Ágil
+
+PerfilUsuario(Desenvolvimento SCRUM):
+    nome:           Desenvolvimento SCRUM
 
 Usuario(Enrico):
     nome:           Enrico Navarro
@@ -29,3 +56,101 @@ Usuario(Marcos):
     listaPerfil:
               - backend
               - frontend
+
+Usuario(Junior):
+    nome:           Junior Nobrega
+    cpf:            66677788899
+    dataNascimento: 1984-05-11
+    dataCadastro:   2017-05-17
+    sexo:           Masculino
+    cargo:          Programador
+    listaPerfil:
+              - backend
+              - frontend
+              - Full-Stack
+
+Usuario(Jose):
+    nome:           Jose Alvarenga
+    cpf:            77788899910
+    dataNascimento: 1983-05-18
+    dataCadastro:   2017-05-17
+    sexo:           Masculino
+    cargo:          Programador
+    listaPerfil:
+              - frontend
+
+Usuario(Nilson):
+    nome:           Nilson Nobrega
+    cpf:            1234567899
+    dataNascimento: 1966-05-18
+    dataCadastro:   2017-05-17
+    sexo:           Masculino
+    cargo:          Programador
+    listaPerfil:
+              - backend
+
+Usuario(Heitor):
+    nome:           Heitor Junks
+    cpf:            11144477722
+    dataNascimento: 1904-02-11
+    dataCadastro:   2017-05-17
+    sexo:           Masculino
+    cargo:          Programador
+    listaPerfil:
+              - backend
+              - frontend
+              - Full-Stack
+
+Usuario(Robson):
+    nome:           Robson Lurdes
+    cpf:            22255588833
+    dataNascimento: 1974-08-13
+    dataCadastro:   2017-05-17
+    sexo:           Masculino
+    cargo:          Programador
+    listaPerfil:
+              - backend
+
+Usuario(Lucas):
+    nome:           Lucas Romeu
+    cpf:            33366699911
+    dataNascimento: 1994-08-20
+    dataCadastro:   2017-05-17
+    sexo:           Masculino
+    cargo:          Programador
+    listaPerfil:
+              - frontend
+
+Usuario(Maria):
+    nome:           Maria Silva
+    cpf:            11122233344
+    dataNascimento: 1990-03-10
+    dataCadastro:   2017-05-17
+    sexo:           Feminino
+    cargo:          Assistente de Serviços Gerais
+    listaPerfil:
+              - Limpeza
+              - Manutenção
+
+Usuario(Julia):
+    nome:           Julia Cardoso
+    cpf:            22233344455
+    dataNascimento: 1991-08-10
+    dataCadastro:   2017-05-17
+    sexo:           Feminino
+    cargo:          Assistente Administrativo
+    listaPerfil:
+              - Cozinha
+              - Manutenção
+
+Usuario(Marcio):
+    nome:           Marcio Durham
+    cpf:            98765432100
+    dataNascimento: 1969-05-09
+    dataCadastro:   2017-05-17
+    sexo:           Masculino
+    cargo:          Gerente de Projeto
+    listaPerfil:
+              - Desenvolvimento Ágil
+              - Desenvolvimento SCRUM
+              - Full-Stack

@@ -7,10 +7,17 @@
 		.module('appModule')
 		.service('adicionarUsuarioService', function(request) {
 
-			this.adicionarUsuario = function() {
-
-				return request.get("/adicionarUsuario");
+			this.carregarCargos = function() {
+				return request.get('cargos');
 			};
+
+			this.carregarPerfis = function() {
+				return request.get('perfis');
+			};
+
+			this.cadastrarUsuario = function(formulario) {
+				request.newPost('cadastrarUsuario',formulario.nome, formulario.cpf, formulario);
+			}
 
 	});
 
