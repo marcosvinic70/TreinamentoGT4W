@@ -38,5 +38,4 @@ public class DateSerializer implements JsonSerializer<Date> {
 		return new DateTransformer(DATE_FORMAT_TIMETABLE);
 		
 	}
-
 }

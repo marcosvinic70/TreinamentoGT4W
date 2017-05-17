@@ -22,6 +22,7 @@
 
 			this.cadastrarUsuario = function(formulario) {
 
+				request.post('cadastrarUsuario',formulario);
 
 			};
 

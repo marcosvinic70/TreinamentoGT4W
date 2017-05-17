@@ -24,9 +24,10 @@ public class Usuario extends Model {
         this.nome = nome;
         this.cpf = cpf;
         this.cargo = new Cargo(cargo);
+        this.cargo.save();
         this.dataCadastro = new Date();
 
-        if(sexo.equalsIgnoreCase("") != true) {
+        if(sexo.equalsIgnoreCase("") != true || sexo == null) {
             this.sexo = sexo;
         }
 

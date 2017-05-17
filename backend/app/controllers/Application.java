@@ -1,5 +1,7 @@
 package controllers;
 
+import com.google.gson.JsonObject;
+import deserializers.DateDeserializer;
 import play.*;
 import play.Play;
 import play.mvc.*;
@@ -25,8 +27,12 @@ public class Application extends BaseController{
 		renderJSON(listaPerfis);
 	}
 
-	public static void cadastrarUsuario() {
-
+	public static void cadastrarUsuario(JsonObject cadastro) {
+		//DateDeserializer deserial = new DateDeserializer();
+		//Date data = deserial.deserialize(cadastro.get("dataNascimento"));
+		//System.out.println(cadastro.get("nome").getAsString() + " " + cadastro.get("cpf").getAsLong() + " " + cadastro.get("cargo").getAsString() + " " + cadastro.get("sexo").getAsString());
+		Usuario user = new Usuario(cadastro.get("nome").getAsString(),cadastro.get("cpf").getAsLong(),cadastro.get("cargo").getAsString(),null,cadastro.get("sexo").getAsString(),null);
+		user.save();
 	}
 	public static void removerUsuario(){
 		

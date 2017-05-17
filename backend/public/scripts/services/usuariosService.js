@@ -14,7 +14,7 @@
 			};
 			this.removerUsuario = function(id){
 
-				request.post("usuarios", id);
+				request.post('usuarios', id);
 			};
 
 	});
