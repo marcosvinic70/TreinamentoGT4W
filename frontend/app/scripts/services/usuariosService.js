@@ -9,7 +9,7 @@
 
 			this.usuarios = function() {
 
-				return request.get("/usuarios");
+				request.get('/usuarios');
 			};
 
 

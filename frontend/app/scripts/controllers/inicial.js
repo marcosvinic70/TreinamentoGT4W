@@ -7,7 +7,6 @@
 		.controller('InicialController', function($scope, inicialService) {
 
 			inicialService.inicial().success(function(){
-					$scope.retornoBackend = result;
 			});
 
 		});

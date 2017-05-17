@@ -4,14 +4,14 @@
 
 	angular
 		.module('appModule')
-		.controller('UsuariosController', function($scope, usuariosService) {
+		.controller('UsuariosController', [ '$scope', 'usuariosService' , function($scope, usuariosService) {
 
-			usuariosService.usuarios().success(function(result){
+			usuariosService.usuarios(function(result){
 			    $scope.listaUsuarios = result;
 			    $scope.seila = "n sei";
 			});
 				
-		});
+		}]);
 	
 
 }());
