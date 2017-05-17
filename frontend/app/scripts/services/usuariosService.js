@@ -12,7 +12,10 @@
 				return request.get('usuarios');
 
 			};
+			this.removerUsuario = function(id){
 
+				request.post('usuarios', id);
+			};
 
 	});
 

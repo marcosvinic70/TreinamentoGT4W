@@ -4,13 +4,24 @@
 
 	angular
 		.module('appModule')
-		.controller('UsuariosController', [ '$scope', 'usuariosService' , function($scope, usuariosService) {
+		.controller('UsuariosController', function($scope, usuariosService) {
 
-			usuariosService.usuarios(function(result){
+			usuariosService.usuarios().success(function(result){
 			    $scope.listaUsuarios = result;
 			});
 				
-		}]);
+			$scope.ModalRemover = function(){
+
+				$('#modal').modal('show');
+
+			};
+
+			$scope.RemoverUsuario = function(id){
+
+				usuariosService.removerUsuario(id);
+ 
+			};
+		});
 	
 
 }());

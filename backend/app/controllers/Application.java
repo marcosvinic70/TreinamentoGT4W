@@ -28,5 +28,8 @@ public class Application extends BaseController{
 	public static void cadastrarUsuario() {
 
 	}
+	public static void removerUsuario(){
+		
+	}
 
 }
