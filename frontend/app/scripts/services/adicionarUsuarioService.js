@@ -16,8 +16,8 @@
 			};
 
 			this.cadastrarUsuario = function(formulario) {
-				request.newPost('cadastrarUsuario',formulario.nome, formulario.cpf, formulario);
-			}
+				request.post('cadastrarUsuario',formulario);
+			};
 
 	});
 
