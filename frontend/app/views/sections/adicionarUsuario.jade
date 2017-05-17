@@ -11,9 +11,22 @@
                         form.form-group
                             label(for="cpf") CPF:
                             input.form-control(type="text", name="cpf", placeholder = "CPF do novo Usuário",id="cpf")
-                        form.form-group
-                            label(for="cargo") Cargo:
-                            input.form-control(type="text", name="cargo", placeholder = "Cargo do Novo Usuário",id="cargo")
+                        .panel.panel-default
+                            .panel-body
+                                label(for="cargo") Cargo:
+                                    .panel
+                                        input(type="radio", name="cargo", value="cargo1")
+                                        | Cargo 1
+                                        br
+                                        input(type="radio", name="cargo", value="cargo2")
+                                        | Cargo 2
+                                        br
+                                        input(type="radio", name="cargo", value="cargo3")
+                                        | Cargo 3
+                                    .input-group
+                                        span.input-group-addon
+                                            input(type="radio", name = "cargo")
+                                        input.form-control(type="text", placeholder="Novo Cargo")
                         form.form-group
                             label(for="sexo") Sexo:
                             br
@@ -27,7 +40,7 @@
                             input.form-control(type="date", name="dataNascimento", placeholder = "DD/MM/AAAA",id="dataNascimento")
                         form.form-group
 
-                            .panel
+                            .panel.panel-default
                                 .panel-body
                                     label(for="perfis") Perfis:
                                     .panel

@@ -2,16 +2,7 @@
 # This file defines all application routes (Higher priority routes first)
 # ~~~~
 
-
 GET     /usuarios								Application.listarUsuarios
-
-
-
-
-
-
-
-
 
 
 
@@ -29,5 +20,3 @@ GET	    /views/	                                staticDir:public/views
 GET     /tmp/                                   staticDir:tmp
 GET     /public/                                staticDir:public
 GET     /                                       staticDir:public/views
-
-

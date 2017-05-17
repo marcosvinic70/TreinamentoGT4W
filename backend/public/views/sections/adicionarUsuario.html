@@ -14,10 +14,21 @@
               <label for="cpf">CPF:</label>
               <input type="text" name="cpf" placeholder="CPF do novo Usuário" id="cpf" class="form-control"/>
             </form>
-            <form class="form-group">
-              <label for="cargo">Cargo:</label>
-              <input type="text" name="cargo" placeholder="Cargo do Novo Usuário" id="cargo" class="form-control"/>
-            </form>
+            <div class="panel panel-default">
+              <div class="panel-body">
+                <label for="cargo">Cargo:
+                  <div class="panel">
+                    <input type="radio" name="cargo" value="cargo1"/>Cargo 1<br/>
+                    <input type="radio" name="cargo" value="cargo2"/>Cargo 2<br/>
+                    <input type="radio" name="cargo" value="cargo3"/>Cargo 3
+                  </div>
+                  <div class="input-group"><span class="input-group-addon">
+                      <input type="radio" name="cargo"/></span>
+                    <input type="text" placeholder="Novo Cargo" class="form-control"/>
+                  </div>
+                </label>
+              </div>
+            </div>
             <form class="form-group">
               <label for="sexo">Sexo:</label><br/>
               <input type="radio" name="sexo" value="Masculino"/>Masculino<br/>
@@ -28,7 +39,7 @@
               <input type="date" name="dataNascimento" placeholder="DD/MM/AAAA" id="dataNascimento" class="form-control"/>
             </form>
             <form class="form-group">
-              <div class="panel">
+              <div class="panel panel-default">
                 <div class="panel-body">
                   <label for="perfis">Perfis:</label>
                   <div class="panel">
