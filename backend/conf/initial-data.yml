@@ -18,3 +18,14 @@ Usuario(Enrico):
     listaPerfil:
               - backend
               - frontend
+
+Usuario(Marcos):
+    nome:           Marcos Oliveira
+    cpf:            12845502656
+    dataNascimento: 1995-05-11
+    dataCadastro:   2017-05-17
+    sexo:           Masculino
+    cargo:          Programador
+    listaPerfil:
+              - backend
+              - frontend
