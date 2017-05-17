@@ -8,7 +8,10 @@
 
 			usuariosService.usuarios().success(function(result){
 			    $scope.listaUsuarios = result;
+			    $scope.seila = "n sei";
 			});
-
+				
 		});
+	
+
 }());

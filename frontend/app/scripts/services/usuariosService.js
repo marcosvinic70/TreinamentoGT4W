@@ -9,8 +9,9 @@
 
 			this.usuarios = function() {
 
-				return request.get("#/usuarios");
+				return request.get("/usuarios");
 			};
+
 
 	});
 

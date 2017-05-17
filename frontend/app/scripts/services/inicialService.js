@@ -5,10 +5,8 @@
 	angular
 		.module('appModule')
 		.service('inicialService', function(request) {
-
-			this.incial = function() {
-
-				return request.get("/index");
+			this.inicial = function() {
+				return request.get("");
 			};
 
 	});
