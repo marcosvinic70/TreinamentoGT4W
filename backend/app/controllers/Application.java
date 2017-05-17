@@ -34,7 +34,8 @@ public class Application extends BaseController{
 		Usuario user = new Usuario(cadastro.get("nome").getAsString(),cadastro.get("cpf").getAsLong(),cadastro.get("cargo").getAsString(),null,cadastro.get("sexo").getAsString(),null);
 		user.save();
 	}
-	public static void removerUsuario(){
+	public static void removerUsuario(JsonObject id){
+		
 		
 	}
 

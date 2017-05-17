@@ -34,7 +34,7 @@
 							td(width="10px")
 								a.span.glyphicon.glyphicon-edit(href="#/",title="Editar Usuário")
 							td(width="10px")
-								a.glyphicon.glyphicon-trash( href="#modal/{{usuario.id}}", data-toggle="modal", title="Remover Usuário",style="color:red")
+								button.btn.btn-info.btn-lg.glyphicon.glyphicon-trash(ng-click= "ModalRemover()", data-toggle="modal", title="Remover Usuário",style="color:red")
 						tr
 							td 
 							td
@@ -55,5 +55,5 @@
 			.modal-body
 				p Confirmação de remoção.
 			.modal-footer
-				button.btn.btn-primary(type="button" , ng-click = "RemoverUsuario(usuario.id)") Remover</button>
+				button.btn.btn-primary(type="button" , ng-click = 'RemoverUsuario()') Remover</button>
 				button.btn.btn-primary(type="button" , data-dismiss="modal") Voltar

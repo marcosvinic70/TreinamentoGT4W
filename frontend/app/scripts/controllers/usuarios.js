@@ -19,7 +19,7 @@
 			$scope.RemoverUsuario = function(id){
 
 				usuariosService.removerUsuario(id);
- 
+ 				
 			};
 		});
 	

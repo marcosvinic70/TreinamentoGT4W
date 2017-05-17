@@ -5,7 +5,7 @@
 GET     /usuarios								Application.listarUsuarios
 GET     /cargos 								Application.listarCargos
 GET     /perfis 								Application.listarPerfis
-
+GET     /removerUsuario							Application.removerUsuario
 
 POST    /cadastrarUsuario                       Application.cadastrarUsuario
 
