@@ -13,7 +13,7 @@ public class Application extends BaseController{
 	public static void listarUsuarios() {
 	    List<Usuario> listaUser = Usuario.findAll();
 	    System.out.println(listaUser.get(0).nome);
-		render(listaUser);
+		renderJSON(listaUser);
 	}
 
 
