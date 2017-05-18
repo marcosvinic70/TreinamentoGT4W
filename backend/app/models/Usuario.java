@@ -23,7 +23,8 @@ public class Usuario extends Model {
         this.nome = nome;
         this.cpf = cpf;
         this.dataCadastro = new Date();
-        this.listaPerfil = new ArrayList<PerfilUsuario>();
+        this.sexo = sexo;
+        this.dataNascimento = dataNascimento;
 
 
         Cargo c = Cargo.find("nome",cargo).first();
@@ -35,15 +36,8 @@ public class Usuario extends Model {
             this.cargo = c;
         }
 
-        if(sexo != null) {
-            this.sexo = sexo;
-        }
-
-        if(dataNascimento != null) {
-            this.dataNascimento = dataNascimento;
-        }
-
         if(perfis != null) {
+            this.listaPerfil = new ArrayList<PerfilUsuario>();
             for(String perfil : perfis)
             {
                 PerfilUsuario p = PerfilUsuario.find("nome",perfil).first();
