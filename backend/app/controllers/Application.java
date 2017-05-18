@@ -48,11 +48,31 @@ public class Application extends BaseController{
 			System.out.println("\nERRO! Usuario já registrado!");
 		}
 	}
-	public static void removerUsuario(JsonObject id){
-		
+	public static void removerUsuario(Long id){
+
+		Usuario user = Usuario.findById(id);
+		user.delete();
 		
 	}
-
+	public static void removerCargo(Long id){
+		
+		try{
+			Cargo cargo = Cargo.findById(id);
+			
+			System.out.println(id);
+	
+			cargo.delete();
+			
+		}
+		catch(Exception e)
+		{
+			String mensagemErro = "Impossível remover este cargo, pois o mesmo está vinculado a um usuário";
+			renderJSON(mensagemErro);
+			
+		}
+		
+	}
+	
 	private static List<String> tratarArrayFrontend(String array) {
 		array = array.replaceAll("\\[","");
 		array = array.replaceAll("]"," ");

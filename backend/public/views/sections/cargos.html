@@ -32,16 +32,33 @@
             </tr>
           </thead>
           <tbody>
-            <tr>
-              <td>	valordeid</td>
-              <td>	valornome</td>
+            <tr ng-repeat="cargo in listaCargos">
+              <td>	{{cargo.id}}</td>
+              <td>	{{cargo.nome}}</td>
               <td></td>
               <td width="10px"></td>
               <td width="10px"><a href="#/" title="Editar Cargo" class="span glyphicon glyphicon-edit"></a></td>
-              <td width="10px"><a href="#/" title="Remover Cargo" style="color:red" class="span glyphicon glyphicon-trash"></a></td>
+              <td width="10px"><a ng-click="ModalRemover(cargo.id)" data-toggle="modal" title="Remover Cargo" style="color:red" class="span glyphicon glyphicon-trash"></a></td>
             </tr>
           </tbody>
         </table>
+      </div>
+    </div>
+  </div>
+</div>
+<div id="modal" tabindex="-1" role="dialog" aria-labelledby="modal" aria-hidden="true" class="modal fade">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" data-dismiss="modal" aria-label="Close" class="close">         </button>
+        <h5 class="modal-title">Remoção de Cargo</h5>
+      </div>
+      <div class="modal-body">
+        <p>Confirmação de remoção.</p>
+      </div>
+      <div class="modal-footer">
+        <button type="button" ng-click="RemoverCargo()" class="btn btn-primary">Remover</button></button>
+        <button type="button" data-dismiss="modal" class="btn btn-primary">Voltar</button>
       </div>
     </div>
   </div>

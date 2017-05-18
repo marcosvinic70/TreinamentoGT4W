@@ -42,9 +42,7 @@
               <td></td>
               <td width="10px"></td>
               <td width="10px"><a href="#/" title="Editar Usuário" class="span glyphicon glyphicon-edit"></a></td>
-              <td width="10px">
-                <button ng-click="ModalRemover()" data-toggle="modal" title="Remover Usuário" style="color:red" class="btn btn-info btn-lg glyphicon glyphicon-trash"></button>
-              </td>
+              <td width="10px"><a ng-click="ModalRemover(usuario.id)" data-toggle="modal" title="Remover Usuário" style="color:red" class="span glyphicon glyphicon-trash"></a></td>
             </tr>
             <tr>
               <td> </td>
@@ -67,7 +65,7 @@
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" data-dismiss="modal" aria-label="Close" class="close">	      </button>
-        <h5 class="modal-title">Modal title</h5>
+        <h5 class="modal-title">Remoção de Usuário</h5>
       </div>
       <div class="modal-body">
         <p>Confirmação de remoção.</p>

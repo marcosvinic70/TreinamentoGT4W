@@ -13,8 +13,7 @@
 
 			};
 			this.removerUsuario = function(id){
-
-				request.post('removerUsuario', id);
+				request.post('removerUsuario/'+id);
 			};
 
 	});
