@@ -30,16 +30,16 @@
                             | Feminino
                         .form-group
                             label(for="dataNascimento") Data de Nascimento:
-                            input.form-control(type="date", name="dataNascimento", placeholder = "DD/MM/AAAA",id="dataNascimento", ng-model="formulario.dataNascimento")
+                            input.form-control(type="text", name="dataNascimento", placeholder = "DD/MM/AAAA",id="dataNascimento", ng-model="formulario.dataNascimento")
                         .form-group
                             label(for="perfis") Perfis:
                             div(ng-repeat=("perfil in listaPerfis"))
-                                input(type="checkbox", name="perfis", value="{{perfil.nome}}", ng-model="perfisModelo")
+                                input(type="checkbox", name="{{perfil.nome}}", value="{{perfil.nome}}", ng-model="formulario.perfisModelo[perfil.nome]", ng-true-value="'{{perfil.nome}}'", ng-false-value="")
                                 | {{perfil.nome}}
                             .input-group
                                 span.input-group-addon
                                     input(type="checkbox")
-                                input.form-control(type="text", placeholder="Novo Perfil de Usuário", ng-model="perfisModelo")
+                                input.form-control(type="text", placeholder="Novo Perfil de Usuário", ng-model="formulario.perfisModelo.perfilNovo")
 
                     div.actions
                         input.form-control(type="submit", value="Cadastrar Novo Usuário")

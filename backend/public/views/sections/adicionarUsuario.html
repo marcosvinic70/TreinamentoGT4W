@@ -31,16 +31,16 @@
             </div>
             <div class="form-group">
               <label for="dataNascimento">Data de Nascimento:</label>
-              <input type="date" name="dataNascimento" placeholder="DD/MM/AAAA" id="dataNascimento" ng-model="formulario.dataNascimento" class="form-control"/>
+              <input type="text" name="dataNascimento" placeholder="DD/MM/AAAA" id="dataNascimento" ng-model="formulario.dataNascimento" class="form-control"/>
             </div>
             <div class="form-group">
               <label for="perfis">Perfis:</label>
               <div ng-repeat="perfil in listaPerfis">
-                <input type="checkbox" name="perfis" value="{{perfil.nome}}" ng-model="perfisModelo"/>{{perfil.nome}}
+                <input type="checkbox" name="{{perfil.nome}}" value="{{perfil.nome}}" ng-model="formulario.perfisModelo[perfil.nome]" ng-true-value="'{{perfil.nome}}'" ng-false-value=""/>{{perfil.nome}}
               </div>
               <div class="input-group"><span class="input-group-addon">
                   <input type="checkbox"/></span>
-                <input type="text" placeholder="Novo Perfil de Usuário" ng-model="perfisModelo" class="form-control"/>
+                <input type="text" placeholder="Novo Perfil de Usuário" ng-model="formulario.perfisModelo.perfilNovo" class="form-control"/>
               </div>
             </div>
           </div>

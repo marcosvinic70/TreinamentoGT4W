@@ -2,6 +2,7 @@ package controllers;
 
 import com.google.gson.JsonObject;
 import deserializers.DateDeserializer;
+import org.omg.PortableInterceptor.SYSTEM_EXCEPTION;
 import play.*;
 import play.Play;
 import play.mvc.*;
@@ -28,11 +29,41 @@ public class Application extends BaseController{
 	}
 
 	public static void cadastrarUsuario(JsonObject cadastro) {
-		//DateDeserializer deserial = new DateDeserializer();
-		//Date data = deserial.deserialize(cadastro.get("dataNascimento"));
-		//System.out.println(cadastro.get("nome").getAsString() + " " + cadastro.get("cpf").getAsLong() + " " + cadastro.get("cargo").getAsString() + " " + cadastro.get("sexo").getAsString());
-		Usuario user = new Usuario(cadastro.get("nome").getAsString(),cadastro.get("cpf").getAsLong(),cadastro.get("cargo").getAsString(),null,cadastro.get("sexo").getAsString(),null);
-		user.save();
+
+		if(Usuario.find("nome",cadastro.get("nome").getAsString()).first() == null) {
+			List<String> perfis = tratarArrayFrontend(cadastro.get("array").toString());
+			Date data = DateDeserializer.parseDate(cadastro.get("dataNascimento").getAsJsonPrimitive().getAsString());
+			Usuario user;
+
+			if(data == null) {
+				user = new Usuario(cadastro.get("nome").getAsString(),cadastro.get("cpf").getAsLong(),cadastro.get("cargo").getAsString(),perfis,cadastro.get("sexo").getAsString(),null);
+			}
+			else {
+				user = new Usuario(cadastro.get("nome").getAsString(),cadastro.get("cpf").getAsLong(),cadastro.get("cargo").getAsString(),perfis,cadastro.get("sexo").getAsString(),data);
+			}
+
+			user.save();
+		}
+		else {
+			System.out.println("\nERRO! Usuario já registrado!");
+		}
 	}
+
+	private static List<String> tratarArrayFrontend(String array) {
+		array = array.replaceAll("\\[","");
+		array = array.replaceAll("]"," ");
+		array = array.replaceAll("\""," ");
+		String[] novoArray = array.split(",");
+		List<String> auxiliar = new ArrayList<String>();
+
+		/*for(String s: novoArray) {
+			auxiliar.add(s);
+		}*/
+
+		Collections.addAll(auxiliar, novoArray);
+
+		return auxiliar;
+	}
+
 
 }

@@ -1,6 +1,5 @@
 package models;
 
-import java.math.BigInteger;
 import java.util.*;
 import javax.persistence.*;
 
@@ -23,11 +22,20 @@ public class Usuario extends Model {
     public Usuario(String nome, Long cpf, String cargo, List<String>perfis, String sexo, Date dataNascimento) {
         this.nome = nome;
         this.cpf = cpf;
-        this.cargo = new Cargo(cargo);
-        this.cargo.save();
         this.dataCadastro = new Date();
+        this.listaPerfil = new ArrayList<PerfilUsuario>();
 
-        if(sexo.equalsIgnoreCase("") != true || sexo == null) {
+
+        Cargo c = Cargo.find("nome",cargo).first();
+        if(c == null) {
+            this.cargo = new Cargo(cargo);
+            this.cargo.save();
+        }
+        else {
+            this.cargo = c;
+        }
+
+        if(sexo != null) {
             this.sexo = sexo;
         }
 
@@ -38,7 +46,15 @@ public class Usuario extends Model {
         if(perfis != null) {
             for(String perfil : perfis)
             {
-                listaPerfil.add(new PerfilUsuario(perfil));
+                PerfilUsuario p = PerfilUsuario.find("nome",perfil).first();
+                if(p == null) {
+                    PerfilUsuario pAux = new PerfilUsuario(perfil);
+                    pAux.save();
+                    listaPerfil.add(pAux);
+                }
+                else {
+                    listaPerfil.add(p);
+                }
             }
         }
 
@@ -47,15 +63,33 @@ public class Usuario extends Model {
     public void editar(String nome, Long cpf, String cargo, List<String>perfis, String sexo, Date dataNascimento) {
         this.nome = nome;
         this.cpf = cpf;
-        this.cargo = new Cargo(cargo);
         this.sexo = sexo;
         this.dataNascimento = dataNascimento;
         this.dataCadastro = new Date();
+
+        Cargo c = Cargo.find("nome",cargo).first();
+        if(c == null) {
+            this.cargo = new Cargo(cargo);
+            this.cargo.save();
+        }
+        else {
+            this.cargo = c;
+        }
         
         listaPerfil.clear();
-        for(String perfil : perfis) 
-        {
-            listaPerfil.add(new PerfilUsuario(perfil));
+        if(perfis != null) {
+            for(String perfil : perfis)
+            {
+                PerfilUsuario p = PerfilUsuario.find("nome",perfil).first();
+                if(p == null) {
+                    PerfilUsuario pAux = new PerfilUsuario(perfil);
+                    pAux.save();
+                    listaPerfil.add(pAux);
+                }
+                else {
+                    listaPerfil.add(p);
+                }
+            }
         }
     }
 }

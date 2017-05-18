@@ -1,4 +1,3 @@
-
 (function() {
 
 	var modulo = angular.module('appModule', ['ngRoute', 'ui.bootstrap']);
