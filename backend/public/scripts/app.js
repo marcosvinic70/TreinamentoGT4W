@@ -23,6 +23,10 @@
                     templateUrl: 'views/sections/adicionarUsuario.html',
                     controller: 'AdicionarUsuarioController',
                 })
+                .when("/modal", {
+                    templateUrl: 'views/sections/usuarios.html',
+                    controller: 'UsuariosController',
+                })
 				.otherwise({
 					redirectTo: '/',
 					templateUrl: 'views/sections/inicial.html',

@@ -48,6 +48,10 @@ public class Application extends BaseController{
 			System.out.println("\nERRO! Usuario já registrado!");
 		}
 	}
+	public static void removerUsuario(JsonObject id){
+		
+		
+	}
 
 	private static List<String> tratarArrayFrontend(String array) {
 		array = array.replaceAll("\\[","");

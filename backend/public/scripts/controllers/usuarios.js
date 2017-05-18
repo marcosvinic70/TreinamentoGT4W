@@ -10,6 +10,17 @@
 			    $scope.listaUsuarios = result;
 			});
 				
+			$scope.ModalRemover = function(){
+
+				$('#modal').modal('show');
+
+			};
+
+			$scope.RemoverUsuario = function(id){
+
+				usuariosService.removerUsuario(id);
+ 				
+			};
 		});
 	
 
