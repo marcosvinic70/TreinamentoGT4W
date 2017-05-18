@@ -18,7 +18,6 @@
 
 			$scope.cadastrarUsuario = function() {
 				$scope.formulario.array = [];
-				
 				angular.forEach($scope.formulario.perfisModelo, function(elemento) {
 					$scope.formulario.array.push(elemento);
 				});
