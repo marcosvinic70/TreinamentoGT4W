@@ -67,6 +67,8 @@ public class Application extends BaseController{
 	public static void removerUsuario(Long id){
 
 		Usuario user = Usuario.findById(id);
+		RegistroUsuario registro = new RegistroUsuario(user);
+		registro.save();
 		user.delete();
 		
 	}
