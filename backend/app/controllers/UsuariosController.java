@@ -19,9 +19,13 @@ public class UsuariosController extends BaseController{
 	    List<Usuario> listaUser = Usuario.findAll();
 		renderJSON(listaUser);
 	}
-
-
+	public static void listarHistoricoUsuarios() {
+		List<RegistroUsuario> listaUser = RegistroUsuario.findAll();
+		renderJSON(listaUser);
+	}
+	
 	public static void cadastrarUsuario(JsonObject cadastro, Long id) {
+
 		Object sexoTeste =  cadastro.get("sexo");
 		String sexo = null;
 		if( sexoTeste != null) {
@@ -84,7 +88,29 @@ public class UsuariosController extends BaseController{
 	public static void removerUsuario(Long id){
 
 		Usuario user = Usuario.findById(id);
-		user.delete();	
+		RegistroUsuario registro = new RegistroUsuario(user);
+		registro.save();
+		user.delete();
+		
+	}
+	public static void removerCargo(Long id){
+
+		
+		try{
+			Cargo cargo = Cargo.findById(id);
+			
+			System.out.println(id);
+	
+			cargo.delete();
+			
+		}
+		catch(Exception e)
+		{
+			String mensagemErro = "Impossível remover este cargo, pois o mesmo está vinculado a um usuário";
+			renderJSON(mensagemErro);
+			
+		}
+		
 	}
 	
 	private static List<String> tratarArrayFrontend(String array) {

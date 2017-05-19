@@ -2,8 +2,6 @@
 # This file defines all application routes (Higher priority routes first)
 # ~~~~
 
-
-
 #ROTA DE USUARIOS
 POST    /cadastrarUsuario/{id}                  UsuariosController.cadastrarUsuario
 GET     /usuarios								UsuariosController.listarUsuarios
@@ -21,7 +19,7 @@ POST    /removerPerfil/{id}       				PerfisController.removerPerfil
 
 #ROTA DE UTILIDADES
 GET     /validacao            					Utilidades.validacao
-
+GET     /historicoUsuarios                      Utilidades.listarHistoricoUsuarios
 
 
 
