@@ -20,7 +20,7 @@
   <div class="panel panel-group panel-default">
     <div class="panel-body">
       <div class="panel panel-default">
-        <table class="table table-hover">
+        <table id="tabela" class="table table-hover sortable">
           <thead class="thead-inverse">
             <tr>
               <th>	Id</th>
@@ -43,6 +43,10 @@
             </tr>
           </tbody>
         </table>
+        <script>
+          var newTableObject = document.getElementById("tabela");
+          sorttable.makeSortable(newTableObject);
+        </script>
       </div>
     </div>
   </div>

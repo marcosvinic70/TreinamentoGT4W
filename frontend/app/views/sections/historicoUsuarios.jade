@@ -12,7 +12,7 @@
 	.panel.panel-group.panel-default
 		.panel-body
 			.panel.panel-default
-				table.table.table-hover
+				table.table.table-hover.sortable(id="tabela")
 					thead.thead-inverse
 						tr
 							th	Id
@@ -30,3 +30,6 @@
 							td	{{usuario.cpf}}
 							td	{{usuario.cargo}}
 							td
+				script
+					var newTableObject = document.getElementById("tabela");
+					sorttable.makeSortable(newTableObject);

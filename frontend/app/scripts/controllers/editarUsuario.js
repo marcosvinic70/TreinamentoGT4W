@@ -8,7 +8,7 @@
 
 			$scope.formulario = {};
 
-			editarUsuarioService.editarUsuario().success(function(result){
+			editarUsuarioService.buscarUsuario().success(function(result){
 				$scope.usuario = result;
 				alert($scope.usuario.id);
 			});
