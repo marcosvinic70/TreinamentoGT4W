@@ -61,14 +61,15 @@ public class UsuariosController extends BaseController{
 			List<String> perfis = null;
 			perfis = tratarArrayFrontend(cadastro.get("array").toString());
 			Usuario user = Usuario.findById(id);
+			/*
+			user.cpf = cadastro.get("cpf").getAsLong());
+			user.sexo = sexo;
 			
-			user.setCpf(cadastro.get("cpf").getAsLong());
-			user.setSexo(sexo);
-			user.setCargo(cargo);
+			user.cargo = cargo;
 			user.setDataNascimento(data);
 			user.setNome(cadastro.get("nome").getAsString());
 			user.setListaPerfil(perfis);
-			
+			*/
 			user.save();
 		}
 	}

@@ -22,7 +22,6 @@ public class CargosController extends BaseController{
 
 	public static void removerCargo(Long id){
 
-		
 		try{
 			Cargo cargo = Cargo.findById(id);
 			cargo.delete();

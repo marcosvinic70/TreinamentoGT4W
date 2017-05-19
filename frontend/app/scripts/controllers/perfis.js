@@ -29,6 +29,9 @@
 				    $location.path('/perfis');
 				});
 			};
+
+
+			
 			$scope.validacao = function(){
 
 				perfisService.validacao().success(function(result){//result chegando NULL por motivos inimaginaveis

@@ -12,8 +12,7 @@
 				$scope.usuario = result;
 				alert($scope.usuario.id);
 			});
-
-
+			
 			editarUsuarioService.carregarCargos().success(function(result){
 				$scope.listaCargos = result;
 			});

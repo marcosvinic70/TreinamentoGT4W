@@ -11,7 +11,6 @@
 				return request.get("perfis");
 			};
 			this.removerPerfil = function(id){
-				//passar variavel de erro?? como fazer
 				request.post('removerPerfil/'+id);
 			};
 			this.validacao = function()
