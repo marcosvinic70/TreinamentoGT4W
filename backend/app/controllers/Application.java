@@ -28,6 +28,11 @@ public class Application extends BaseController{
 		renderJSON(listaPerfis);
 	}
 
+	public static void listarHistoricoUsuarios() {
+		List<RegistroUsuario> listaUser = RegistroUsuario.findAll();
+		renderJSON(listaUser);
+	}
+
 	public static void cadastrarUsuario(JsonObject cadastro) {
 		Object sexoTeste =  cadastro.get("sexo");
 		String sexo = null;

@@ -1,0 +1,32 @@
+.container
+	.panel.panel-group.panel-default
+		.panel-body
+			h4 Buscar Usuários:
+			.row
+				.navbar-form.navbar-left(method="POST", action)
+					form(name="buscaUsuarios", method="get" , action = "")
+						form.form-group
+							div.input
+								input.form-control(type="text", name="nomeUsuario", placeholder = "Nome do Usuário")
+								input.form-control(type="submit", value="Procurar")
+	.panel.panel-group.panel-default
+		.panel-body
+			.panel.panel-default
+				table.table.table-hover
+					thead.thead-inverse
+						tr
+							th	Id
+							th	Nome
+							th	CPF
+							th	Cargo
+							th(width="50px")
+							th(width="10px")
+							th(width="10px")
+							th(width="10px")
+					tbody
+						tr(ng-repeat=("usuario in listaHistoricoUsuarios"))
+							td	{{usuario.id}}
+							td	{{usuario.nome}}
+							td	{{usuario.cpf}}
+							td	{{usuario.cargo}}
+							td
