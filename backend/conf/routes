@@ -2,13 +2,25 @@
 # This file defines all application routes (Higher priority routes first)
 # ~~~~
 
-GET     /usuarios								Application.listarUsuarios
-GET     /cargos 								Application.listarCargos
-GET     /perfis 								Application.listarPerfis
-POST    /removerUsuario/{id}				    Application.removerUsuario
-POST    /removerCargo/{id}       				Application.removerCargo
-POST    /cadastrarUsuario                       Application.cadastrarUsuario
 
+
+#ROTA DE USUARIOS
+POST    /cadastrarUsuario/{id}                  UsuariosController.cadastrarUsuario
+GET     /usuarios								UsuariosController.listarUsuarios
+POST    /removerUsuario/{id}				    UsuariosController.removerUsuario
+POST	/usuarioParaEditar/{id}					UsuariosController.usuarioParaEditar
+POST    /editarUsuario				            UsuariosController.buscarUsuarioParaEditar
+
+#ROTA DE CARGOS
+GET     /cargos 								CargosController.listarCargos
+POST    /removerCargo/{id}       				CargosController.removerCargo
+
+#ROTA DE PERFIS
+GET     /perfis 								PerfisController.listarPerfis
+POST    /removerPerfil/{id}       				PerfisController.removerPerfil
+
+#ROTA DE UTILIDADES
+GET     /validacao            					Utilidades.validacao
 
 
 

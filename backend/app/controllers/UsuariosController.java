@@ -3,32 +3,25 @@ package controllers;
 import com.google.gson.JsonObject;
 import deserializers.DateDeserializer;
 import org.omg.PortableInterceptor.SYSTEM_EXCEPTION;
+import org.postgresql.jdbc2.optional.SimpleDataSource;
+
 import play.*;
 import play.Play;
 import play.mvc.*;
-
+import util.MensagemValidacao;
 import java.util.*;
 
 import models.*;
 
-public class Application extends BaseController{
+public class UsuariosController extends BaseController{
 
 	public static void listarUsuarios() {
 	    List<Usuario> listaUser = Usuario.findAll();
 		renderJSON(listaUser);
 	}
 
-	public static void listarCargos() {
-		List<Cargo> listaCargos = Cargo.findAll();
-		renderJSON(listaCargos);
-	}
 
-	public static void listarPerfis() {
-		List<PerfilUsuario> listaPerfis = PerfilUsuario.findAll();
-		renderJSON(listaPerfis);
-	}
-
-	public static void cadastrarUsuario(JsonObject cadastro) {
+	public static void cadastrarUsuario(JsonObject cadastro, Long id) {
 		Object sexoTeste =  cadastro.get("sexo");
 		String sexo = null;
 		if( sexoTeste != null) {
@@ -49,8 +42,8 @@ public class Application extends BaseController{
 		else {
 			cargo = cadastro.get("cargoNovo").getAsString();
 		}
-
-		if(Usuario.find("cpf",cadastro.get("cpf").getAsLong()).first() == null) {
+		
+		if(Usuario.find("cpf",cadastro.get("cpf").getAsLong()).first() == null && id == 0) {
 			List<String> perfis = null;
 			perfis = tratarArrayFrontend(cadastro.get("array").toString());
 			Usuario user;
@@ -59,42 +52,45 @@ public class Application extends BaseController{
 
 			user.save();
 		}
-		else {
-			System.out.println("\nERRO! Usuario já registrado!");
+		else {//caso exista, para editar
+			
+			List<String> perfis = null;
+			perfis = tratarArrayFrontend(cadastro.get("array").toString());
+			Usuario user = Usuario.findById(id);
+			
+			user.setCpf(cadastro.get("cpf").getAsLong());
+			user.setSexo(sexo);
+			user.setCargo(cargo);
+			user.setDataNascimento(data);
+			user.setNome(cadastro.get("nome").getAsString());
+			user.setListaPerfil(perfis);
+			
+			user.save();
 		}
 	}
+	public static void buscarUsuarioParaEditar(Usuario user){//usuario do id que o usuarioController enviou, agora sendo enviado para editarUsuarioController
+		System.out.println(user.nome);
+		renderJSON(user);
+	}
+	
+	public static void usuarioParaEditar(Long id){ //id enviado por usuarioController
+		
+		Usuario user = Usuario.findById(id);
 
+		buscarUsuarioParaEditar(user);
+	}
+	
+	
 	public static void removerUsuario(Long id){
 
 		Usuario user = Usuario.findById(id);
-		user.delete();
-		
-	}
-	public static void removerCargo(Long id){
-
-		
-		try{
-			Cargo cargo = Cargo.findById(id);
-			
-			System.out.println(id);
-	
-			cargo.delete();
-			
-		}
-		catch(Exception e)
-		{
-			String mensagemErro = "Impossível remover este cargo, pois o mesmo está vinculado a um usuário";
-			renderJSON(mensagemErro);
-			
-		}
-		
+		user.delete();	
 	}
 	
 	private static List<String> tratarArrayFrontend(String array) {
 		if(array.compareTo("[]") == 0) {
 			return null;
 		}
-
 		array = array.replaceAll("\\[","");
 		array = array.replaceAll("]","");
 		array = array.replaceAll("\"","");
@@ -110,6 +106,4 @@ public class Application extends BaseController{
 
 		return auxiliar;
 	}
-
-
 }

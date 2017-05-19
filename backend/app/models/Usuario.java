@@ -2,12 +2,14 @@ package models;
 
 import java.util.*;
 import javax.persistence.*;
-
+import util.MensagemValidacao;
 import play.db.jpa.*;
 
 @Entity
 public class Usuario extends Model {
-    public String nome;
+
+
+	public String nome;
     public Long cpf;
     public Date dataNascimento;
     public String sexo;
@@ -86,4 +88,55 @@ public class Usuario extends Model {
             }
         }
     }
+    
+    public void setNome(String nome) {
+		this.nome = nome;
+	}
+
+	public void setCpf(Long cpf) {
+		this.cpf = cpf;
+	}
+
+	public void setDataNascimento(Date dataNascimento) {
+		this.dataNascimento = dataNascimento;
+	}
+
+	public void setSexo(String sexo) {
+		this.sexo = sexo;
+	}
+
+	public void setDataCadastro(Date dataCadastro) {
+		this.dataCadastro = dataCadastro;
+	}
+
+	public void setCargo(String cargo) {
+		
+        Cargo c = Cargo.find("nome",cargo).first();
+        if(c == null) {
+            this.cargo = new Cargo(cargo);
+            this.cargo.save();
+        }
+        else {
+            this.cargo = c;
+        }
+        
+	}
+
+	public void setListaPerfil(List<String> perfis) {
+	       listaPerfil.clear();
+	        if(perfis != null) {
+	            for(String perfil : perfis)
+	            {
+	                PerfilUsuario p = PerfilUsuario.find("nome",perfil).first();
+	                if(p == null) {
+	                    PerfilUsuario pAux = new PerfilUsuario(perfil);
+	                    pAux.save();
+	                    listaPerfil.add(pAux);
+	                }
+	                else {
+	                    listaPerfil.add(p);
+	                }
+	            }
+	        }
+	}
 }

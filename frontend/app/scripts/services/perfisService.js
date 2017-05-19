@@ -8,9 +8,16 @@
 
 			this.perfis = function() {
 
-				return request.get("/perfis");
+				return request.get("perfis");
 			};
-
+			this.removerPerfil = function(id){
+				//passar variavel de erro?? como fazer
+				request.post('removerPerfil/'+id);
+			};
+			this.validacao = function()
+			{
+				return request.get('validacao');
+			};
 	});
 
 })();

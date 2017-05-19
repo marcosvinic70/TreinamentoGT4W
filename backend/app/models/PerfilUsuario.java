@@ -2,7 +2,7 @@ package models;
 
 import java.util.*;
 import javax.persistence.*;
-
+import util.MensagemValidacao;
 import play.db.jpa.*;
 
 @Entity

@@ -32,7 +32,7 @@
 							td
 							td(width="10px")
 							td(width="10px")
-								a.span.glyphicon.glyphicon-edit(href="#/",title="Editar Usuário")
+								a.span.glyphicon.glyphicon-edit(ng-click= "EditarUsuario(usuario.id)",title="Editar Usuário")
 							td(width="10px")
 								a.span.glyphicon.glyphicon-trash(ng-click= "ModalRemover(usuario.id)",data-toggle="modal", title="Remover Usuário",style="color:red")
 						tr

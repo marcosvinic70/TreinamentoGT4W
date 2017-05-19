@@ -22,6 +22,12 @@
 				$('#modal').modal('hide');
 			};
 
+			$scope.EditarUsuario = function(id){
+				$scope.idEdicao = id;
+				usuariosService.usuarioEditado($scope.idEdicao);
+				$location.path('/editarUsuario');
+			};
+
 			$scope.inicio = function(){
 					usuariosService.usuarios().success(function(result){
 				    $scope.listaUsuarios = result;

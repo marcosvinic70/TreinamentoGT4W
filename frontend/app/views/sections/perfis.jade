@@ -22,13 +22,24 @@
                             th(width="10px")
                             th(width="10px")
                     tbody
-                        tr
-                            td	valordeid
-                            td	valornome
+                        tr(ng-repeat=("perfil in listaPerfis"))
+                            td  {{perfil.id}}
+                            td  {{perfil.nome}}
                             td
                             td(width="10px")
                             td(width="10px")
-                                a.span.glyphicon.glyphicon-edit(href="#/",title="Editar Perfil de Usuário")
+                                a.span.glyphicon.glyphicon-edit(href="#/",title="Editar Perfil")
                             td(width="10px")
-                                a.span.glyphicon.glyphicon-trash(href="#/",title="Remover Perfil de Usuário",style="color:red")
+                                a.span.glyphicon.glyphicon-trash(ng-click= "ModalRemover(perfil.id)",data-toggle="modal", title="Remover Perfil",style="color:red")
 
+#modal.modal.fade(tabindex="-1", role="dialog", aria-labelledby="modal", aria-hidden="true")
+    .modal-dialog
+        .modal-content
+            .modal-header
+                button.close(type="button",data-dismiss="modal", aria-label="Close")          
+                h5.modal-title Remoção de Perfil
+            .modal-body
+                p Confirmação de remoção.
+            .modal-footer
+                button.btn.btn-primary(type="button" , ng-click = 'RemoverPerfil()') Remover</button>
+                button.btn.btn-primary(type="button" , data-dismiss="modal") Voltar

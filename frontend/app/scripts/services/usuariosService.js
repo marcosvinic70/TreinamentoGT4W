@@ -12,10 +12,13 @@
 				return request.get('usuarios');
 
 			};
+			this.usuarioEditado = function(id) {
+				return request.get('usuarioParaEditar/'+id);
+
+			};
+
 			this.removerUsuario = function(id){
 				request.post('removerUsuario/'+id);
 			};
-
-	});
-
+		});
 })();

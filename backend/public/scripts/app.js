@@ -11,6 +11,10 @@
 					templateUrl: 'views/sections/usuarios.html',
 					controller: 'UsuariosController',
 				})
+				.when("/editarUsuario", {
+					templateUrl: 'views/sections/editarUsuario.html',
+					controller: 'EditarUsuariosController',
+				})
                 .when("/cargos", {
                     templateUrl: 'views/sections/cargos.html',
                     controller: 'CargosController',
@@ -22,10 +26,6 @@
                 .when("/adicionarUsuario", {
                     templateUrl: 'views/sections/adicionarUsuario.html',
                     controller: 'AdicionarUsuarioController',
-                })
-                .when("/modal", {
-                    templateUrl: 'views/sections/usuarios.html',
-                    controller: 'UsuariosController',
                 })
 				.otherwise({
 					redirectTo: '/',
