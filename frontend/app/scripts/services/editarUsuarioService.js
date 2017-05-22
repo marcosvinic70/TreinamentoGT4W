@@ -20,7 +20,7 @@
 
 			this.buscarUsuario = function() {
 
-				return request.get('buscarUsuarioParaEditar');
+				return request.get('editarUsuario');
 
 			};
 

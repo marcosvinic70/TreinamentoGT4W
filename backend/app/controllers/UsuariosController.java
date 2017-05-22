@@ -74,8 +74,8 @@ public class UsuariosController extends BaseController{
 		}
 	}
 	public static void buscarUsuarioParaEditar(Usuario user){//usuario do id que o usuarioController enviou, agora sendo enviado para editarUsuarioController
-		System.out.println(user.nome);
-		renderJSON(user);
+
+		//renderJSON(user);
 	}
 	
 	public static void usuarioParaEditar(Long id){ //id enviado por usuarioController

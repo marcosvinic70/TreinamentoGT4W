@@ -7,7 +7,7 @@ POST    /cadastrarUsuario/{id}                  UsuariosController.cadastrarUsua
 GET     /usuarios								UsuariosController.listarUsuarios
 POST    /removerUsuario/{id}				    UsuariosController.removerUsuario
 POST	/usuarioParaEditar/{id}					UsuariosController.usuarioParaEditar
-POST    /editarUsuario				            UsuariosController.buscarUsuarioParaEditar
+GET     /editarUsuario				            UsuariosController.buscarUsuarioParaEditar
 
 #ROTA DE CARGOS
 GET     /cargos 								CargosController.listarCargos

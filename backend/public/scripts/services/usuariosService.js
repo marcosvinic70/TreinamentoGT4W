@@ -13,7 +13,7 @@
 
 			};
 			this.usuarioEditado = function(id) {
-				return request.get('usuarioParaEditar/'+id);
+				return request.post('usuarioParaEditar/'+id);
 
 			};
 
