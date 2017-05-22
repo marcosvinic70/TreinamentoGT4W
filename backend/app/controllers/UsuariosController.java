@@ -73,18 +73,10 @@ public class UsuariosController extends BaseController{
 			user.save();
 		}
 	}
-	public static void buscarUsuarioParaEditar(Usuario user){//usuario do id que o usuarioController enviou, agora sendo enviado para editarUsuarioController
-
-		//renderJSON(user);
-	}
-	
-	public static void usuarioParaEditar(Long id){ //id enviado por usuarioController
-		
+	public static void buscarUsuarioParaEditar(Long id){//usuario do id que o usuarioController enviou, agora sendo enviado para editarUsuarioController
 		Usuario user = Usuario.findById(id);
-
-		buscarUsuarioParaEditar(user);
+		renderJSON(user);
 	}
-	
 	
 	public static void removerUsuario(Long id){
 

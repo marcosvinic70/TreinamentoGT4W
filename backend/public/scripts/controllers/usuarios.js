@@ -4,7 +4,7 @@
 
 	angular
 		.module('appModule')
-		.controller('UsuariosController', function($scope,$location, usuariosService) {
+		.controller('UsuariosController', function($scope, $location, usuariosService) {
 
 
 			usuariosService.usuarios().success(function(result){
@@ -23,9 +23,7 @@
 			};
 
 			$scope.EditarUsuario = function(id){
-				$scope.idEdicao = id;
-				usuariosService.usuarioEditado($scope.idEdicao);
-				$location.path('/editarUsuario');
+				$location.path('/editarUsuario/'+id);
 			};
 
 			$scope.inicio = function(){

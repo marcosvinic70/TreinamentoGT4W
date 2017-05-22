@@ -22,6 +22,7 @@ module.exports = function(grunt) {
 	grunt.initConfig({
 
 		config: config,
+		
 
 		watch: {
 			
@@ -445,6 +446,7 @@ module.exports = function(grunt) {
 		},
 		
 		jshint: {
+			 
 			options: {
 				jshintrc: '.jshintrc'
 			},

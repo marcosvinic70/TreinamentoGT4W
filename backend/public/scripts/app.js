@@ -11,7 +11,7 @@
 					templateUrl: 'views/sections/usuarios.html',
 					controller: 'UsuariosController',
 				})
-				.when("/editarUsuario", {
+				.when("/editarUsuario/:id", {
 					templateUrl: 'views/sections/editarUsuario.html',
 					controller: 'EditarUsuariosController',
 				})
@@ -19,6 +19,7 @@
                     templateUrl: 'views/sections/cargos.html',
                     controller: 'CargosController',
                 })
+
                 .when("/perfis", {
                     templateUrl: 'views/sections/perfis.html',
                     controller: 'PerfisController',
