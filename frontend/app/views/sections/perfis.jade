@@ -12,7 +12,7 @@
     .panel.panel-group.panel-default
         .panel-body
             .panel.panel-default
-                table.table.table-hover
+                table.table.table-hover.sortable(id="tabela")
                     thead.thead-inverse
                         tr
                             th	Id
@@ -31,6 +31,9 @@
                                 a.span.glyphicon.glyphicon-edit(href="#/",title="Editar Perfil")
                             td(width="10px")
                                 a.span.glyphicon.glyphicon-trash(ng-click= "ModalRemover(perfil.id)",data-toggle="modal", title="Remover Perfil",style="color:red")
+                script
+                    var newTableObject = document.getElementById("tabela");
+                    sorttable.makeSortable(newTableObject);
 
 #modal.modal.fade(tabindex="-1", role="dialog", aria-labelledby="modal", aria-hidden="true")
     .modal-dialog
