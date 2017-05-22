@@ -34,7 +34,7 @@
           <tbody>
             <tr ng-repeat="perfil in listaPerfis">
               <td> {{perfil.id}}</td>
-              <td> {{perfil.nome}}</td>
+              <td> {{perfil.nome | lowercase}}</td>
               <td></td>
               <td width="10px"></td>
               <td width="10px"><a href="#/" title="Editar Perfil" class="span glyphicon glyphicon-edit"></a></td>

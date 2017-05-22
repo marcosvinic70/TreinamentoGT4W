@@ -28,7 +28,7 @@
                             td
                             td(width="10px")
                             td(width="10px")
-                                a.span.glyphicon.glyphicon-edit(href="#/",title="Editar Cargo")
+                                a.span.glyphicon.glyphicon-edit(ng-click= "editarCargo(cargo.id)",title="Editar Cargo")
                             td(width="10px")
                                 a.span.glyphicon.glyphicon-trash(ng-click= "ModalRemover(cargo.id)",data-toggle="modal", title="Remover Cargo",style="color:red")
                 script

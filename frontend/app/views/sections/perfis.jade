@@ -24,7 +24,7 @@
                     tbody
                         tr(ng-repeat=("perfil in listaPerfis"))
                             td  {{perfil.id}}
-                            td  {{perfil.nome}}
+                            td  {{perfil.nome | lowercase}}
                             td
                             td(width="10px")
                             td(width="10px")

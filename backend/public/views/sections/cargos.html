@@ -37,7 +37,7 @@
               <td>	{{cargo.nome}}</td>
               <td></td>
               <td width="10px"></td>
-              <td width="10px"><a href="#/" title="Editar Cargo" class="span glyphicon glyphicon-edit"></a></td>
+              <td width="10px"><a ng-click="editarCargo(cargo.id)" title="Editar Cargo" class="span glyphicon glyphicon-edit"></a></td>
               <td width="10px"><a ng-click="ModalRemover(cargo.id)" data-toggle="modal" title="Remover Cargo" style="color:red" class="span glyphicon glyphicon-trash"></a></td>
             </tr>
           </tbody>
