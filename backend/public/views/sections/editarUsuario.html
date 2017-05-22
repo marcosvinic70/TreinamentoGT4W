@@ -8,16 +8,16 @@
           <div class="input">
             <div class="form-group">
               <label for="nome">Nome*:</label>
-              <input type="text" name="nomeUsuario" placeholder="Nome do novo Usuário" id="nome" value="{{usuario.nome}}" ng-model="formulario.nome" class="form-control"/>
+              <input type="text" name="nomeUsuario" placeholder="Nome do novo Usuário" id="nome" ng-value="usuario.nome" ng-model="formulario.nome" class="form-control"/>
             </div>
             <div class="form-group">
               <label for="cpf">CPF*:</label>
-              <input type="text" name="cpf" placeholder="CPF do novo Usuário" id="cpf" ng-model="formulario.cpf" value="{{usuario.cpf}}" class="form-control"/>
+              <input type="text" name="cpf" placeholder="CPF do novo Usuário" id="cpf" ng-model="formulario.cpf" ng-value="usuario.cpf" class="form-control"/>
             </div>
             <div class="form-group">
               <label for="cargo">Cargo*:</label>
               <div ng-repeat="cargo in listaCargos">
-                <input type="radio" name="cargo" value="{{cargo.nome}}" ng-model="formulario.cargo"/>{{cargo.nome}}
+                <input type="radio" name="cargo" ng-value="cargo.nome" ng-model="formulario.cargo"/>{{cargo.nome}}
               </div>
               <div class="input-group"><span class="input-group-addon">
                   <input type="radio" name="cargo"/></span>
@@ -26,17 +26,17 @@
             </div>
             <div class="form-group">
               <label for="sexo">Sexo:</label><br/>
-              <input type="radio" name="sexo" value="Masculino" ng-model="formulario.sexo"/>Masculino<br/>
-              <input type="radio" name="sexo" value="Feminino" ng-model="formulario.sexo"/>Feminino
+              <input type="radio" name="sexo" value="Masculino" ng-value="usuario.sexo" ng-model="formulario.sexo"/>Masculino<br/>
+              <input type="radio" name="sexo" value="Feminino" ng-value="usuario.sexo" ng-model="formulario.sexo"/>Feminino
             </div>
             <div class="form-group">
               <label for="dataNascimento">Data de Nascimento:</label>
-              <input type="text" name="dataNascimento" placeholder="DD/MM/AAAA" id="dataNascimento" ng-model="formulario.dataNascimento" value="{{usuario.dataNascimento}}" class="form-control"/>
+              <input type="text" name="dataNascimento" placeholder="DD/MM/AAAA" id="dataNascimento" ng-model="formulario.dataNascimento" ng-value="usuario.dataNascimento" class="form-control"/>
             </div>
             <div class="form-group">
               <label for="perfis">Perfis:</label>
               <div ng-repeat="perfil in listaPerfis">
-                <input type="checkbox" name="{{perfil.nome}}" value="{{perfil.nome}}" ng-model="formulario.perfisModelo[perfil.nome]" ng-true-value="'{{perfil.nome}}'" ng-false-value=""/>{{perfil.nome}}
+                <input type="checkbox" name="{{perfil.nome}}" ng-value="perfil.nome" ng-model="formulario.perfisModelo[perfil.nome]" ng-true-value="'{{perfil.nome}}'" ng-false-value=""/>{{perfil.nome}}
               </div>
               <div class="input-group"><span class="input-group-addon">
                   <input type="checkbox"/></span>
