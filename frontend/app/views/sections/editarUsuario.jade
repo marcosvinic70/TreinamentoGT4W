@@ -14,7 +14,7 @@
                         .form-group
                             label(for="cargo") Cargo*:
                             div(ng-repeat=("cargo in listaCargos"))
-                                input(type="radio", name="cargo", ng-value="cargo.nome", ng-model="formulario.cargo")
+                                input(type="radio", name="cargo", ng-model="formulario.cargo")
                                 | {{cargo.nome}}
                             .input-group
                                 span.input-group-addon
@@ -23,10 +23,10 @@
                         .form-group
                             label(for="sexo") Sexo:
                             br
-                            input(type="radio", name="sexo", value="Masculino",ng-value="usuario.sexo", ng-model="formulario.sexo")
+                            input(type="radio", name="sexo", value="Masculino", ng-model="formulario.sexo")
                             | Masculino
                             br
-                            input(type="radio", name="sexo", value="Feminino", ng-value="usuario.sexo",ng-model="formulario.sexo")
+                            input(type="radio", name="sexo", value="Feminino",ng-model="formulario.sexo")
                             | Feminino
                         .form-group
                             label(for="dataNascimento") Data de Nascimento:
@@ -34,7 +34,7 @@
                         .form-group
                             label(for="perfis") Perfis:
                             div(ng-repeat=("perfil in listaPerfis"))
-                                input(type="checkbox", name="{{perfil.nome}}", ng-value="perfil.nome", ng-model="formulario.perfisModelo[perfil.nome]", ng-true-value="'{{perfil.nome}}'", ng-false-value="")
+                                input(type="checkbox", name="{{perfil.nome}}", ng-model="formulario.perfisModelo[perfil.nome]", ng-true-value="'{{perfil.nome}}'", ng-false-value="")
                                 | {{perfil.nome}}
                             .input-group
                                 span.input-group-addon

@@ -22,7 +22,7 @@
 					$scope.formulario.array.push(elemento);
 				});
 
-				adicionarUsuarioService.cadastrarUsuario($scope.formulario);
+				adicionarUsuarioService.cadastrarUsuario($scope.formulario, 0);
 			};
 
 		});

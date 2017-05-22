@@ -23,7 +23,7 @@
 				angular.forEach($scope.formulario.perfisModelo, function(elemento) {
 					$scope.formulario.array.push(elemento);
 				});
-				usuariosService.gravarAlteracoes($scope.formulario,$scope.usuario.id);
+				usuariosService.gravarAlteracoes($routeParams.id,$scope.formulario);
 			};
 	});
 }());

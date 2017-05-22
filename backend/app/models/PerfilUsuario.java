@@ -9,7 +9,7 @@ import play.db.jpa.*;
 public class PerfilUsuario extends Model {
     public String nome;
 
-    PerfilUsuario(String nome) {
+    public PerfilUsuario(String nome) {
         this.nome = nome;
     }
 
