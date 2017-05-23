@@ -1,26 +1,25 @@
 
-<div class="container">
+<div class="container"><!--.panel.panel-group.panel-default
+  <div class="panel-body">
+    <h4>Buscar Cargos:</h4>
+    <div class="row">
+      <div method="POST" action="action" class="navbar-form navbar-left">
+        <form name="buscaCargos" method="get" action="">
+          <form class="form-group">
+            <div class="input">
+              <input type="text" name="nomeCargo" placeholder="Nome do Cargo" class="form-control"/>
+              <input type="submit" value="Procurar" class="form-control"/>
+            </div>
+          </form>
+        </form>
+      </div>
+    </div>
+  </div>-->
   <div class="panel panel-group panel-default">
     <div class="panel-body">
       <h4>Buscar Cargos:</h4>
-      <div class="row">
-        <div method="POST" action="action" class="navbar-form navbar-left">
-          <form name="buscaCargos" method="get" action="">
-            <form class="form-group">
-              <div class="input">
-                <input type="text" name="nomeCargo" placeholder="Nome do Cargo" class="form-control"/>
-                <input type="submit" value="Procurar" class="form-control"/>
-              </div>
-            </form>
-          </form>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="panel panel-group panel-default">
-    <div class="panel-body">
       <div class="panel panel-default">
-        <table id="tabela" class="table table-hover sortable">
+        <table id="tabela" datatable="ng" data-page-length="5" class="table table-hover sortable">
           <thead class="thead-inverse">
             <tr>
               <th>	Id</th>
@@ -37,16 +36,11 @@
               <td>	{{cargo.nome}}</td>
               <td></td>
               <td width="10px"></td>
-              <td width="10px"><a href="#/" title="Editar Cargo" class="span glyphicon glyphicon-edit"></a></td>
+              <td width="10px"><a ng-click="editarCargo(cargo.id)" title="Editar Cargo" class="span glyphicon glyphicon-edit"></a></td>
               <td width="10px"><a ng-click="ModalRemover(cargo.id)" data-toggle="modal" title="Remover Cargo" style="color:red" class="span glyphicon glyphicon-trash"></a></td>
             </tr>
           </tbody>
         </table>
-        <script>
-          var newTableObject = document.getElementById("tabela");
-          sorttable.makeSortable(newTableObject);
-          
-        </script>
       </div>
     </div>
   </div>

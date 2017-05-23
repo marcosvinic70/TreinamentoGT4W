@@ -8,6 +8,7 @@ import org.postgresql.jdbc2.optional.SimpleDataSource;
 import play.*;
 import play.Play;
 import play.mvc.*;
+import sun.rmi.runtime.Log;
 import util.MensagemValidacao;
 import java.util.*;
 
@@ -31,5 +32,10 @@ public class CargosController extends BaseController{
 			renderJSON("Impossível remover este cargo, pois o mesmo está vinculado a um usuário");
 		}
 		
+	}
+
+	public static void editarCargo(Long id) {
+		Cargo cargo = Cargo.findById(id);
+		renderJSON(cargo);
 	}
 }

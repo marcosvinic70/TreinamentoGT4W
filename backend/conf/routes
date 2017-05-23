@@ -11,6 +11,7 @@ POST    /editarUsuario/{id}				        UsuariosController.buscarUsuarioParaEdita
 #ROTA DE CARGOS
 GET     /cargos 								CargosController.listarCargos
 POST    /removerCargo/{id}       				CargosController.removerCargo
+GET     /cargoParaEditar                        CargosController.editarCargo
 
 #ROTA DE PERFIS
 GET     /perfis 								PerfisController.listarPerfis

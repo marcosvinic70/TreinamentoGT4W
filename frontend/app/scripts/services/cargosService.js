@@ -16,6 +16,10 @@
 				//passar variavel de erro?? como fazer
 				request.post('removerCargo/'+id);
 			};
+
+			this.cargoEditado = function(id) {
+				return request.get('cargoParaEditar',id);
+			};
 	});
 
 })();

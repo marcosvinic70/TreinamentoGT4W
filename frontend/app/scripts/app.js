@@ -1,6 +1,6 @@
 (function() {
 
-	var modulo = angular.module('appModule', ['ngRoute', 'ui.bootstrap']);
+	var modulo = angular.module('appModule', ['ngRoute', 'ui.bootstrap','datatables']);
 
 	modulo.config(['$routeProvider',
 
@@ -32,6 +32,10 @@
                     templateUrl: 'views/sections/historicoUsuarios.html',
                     controller: 'HistoricoUsuariosController',
                 })
+                .when("/editarCargo", {
+                    templateUrl: 'views/sections/editarCargos.html',
+                    controller: 'EditarCargoController',
+                })
 				.otherwise({
 					redirectTo: '/',
 					templateUrl: 'views/sections/inicial.html',
@@ -39,14 +43,11 @@
 				});
 				
 		}
-
 	])
 
 
 	.controller('AppCtrl', ["$scope", "$rootScope",
 		function() {
-
-
 		}
 
 	]);
