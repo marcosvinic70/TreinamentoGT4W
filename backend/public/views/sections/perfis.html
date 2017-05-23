@@ -1,26 +1,25 @@
 
-<div class="container">
+<div class="container"><!--.panel.panel-group.panel-default
+  <div class="panel-body">
+    <h4>Buscar Perfis de Usuário:</h4>
+    <div class="row">
+      <div method="POST" action="action" class="navbar-form navbar-left">
+        <form name="buscaPerfis" method="get" action="">
+          <form class="form-group">
+            <div class="input">
+              <input type="text" name="nomePerfil" placeholder="Nome do Perfil de Usuário" class="form-control"/>
+              <input type="submit" value="Procurar" class="form-control"/>
+            </div>
+          </form>
+        </form>
+      </div>
+    </div>
+  </div>-->
   <div class="panel panel-group panel-default">
     <div class="panel-body">
       <h4>Buscar Perfis de Usuário:</h4>
-      <div class="row">
-        <div method="POST" action="action" class="navbar-form navbar-left">
-          <form name="buscaPerfis" method="get" action="">
-            <form class="form-group">
-              <div class="input">
-                <input type="text" name="nomePerfil" placeholder="Nome do Perfil de Usuário" class="form-control"/>
-                <input type="submit" value="Procurar" class="form-control"/>
-              </div>
-            </form>
-          </form>
-        </div>
-      </div>
-    </div>
-  </div>
-  <div class="panel panel-group panel-default">
-    <div class="panel-body">
       <div class="panel panel-default">
-        <table id="tabela" class="table table-hover sortable">
+        <table id="tabela" datatable="ng" data-page-length="5" class="table table-hover sortable">
           <thead class="thead-inverse">
             <tr>
               <th>	Id</th>
@@ -42,11 +41,6 @@
             </tr>
           </tbody>
         </table>
-        <script>
-          var newTableObject = document.getElementById("tabela");
-          sorttable.makeSortable(newTableObject);
-          
-        </script>
       </div>
     </div>
   </div>

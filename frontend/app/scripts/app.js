@@ -1,6 +1,6 @@
 (function() {
 
-	var modulo = angular.module('appModule', ['ngRoute', 'ui.bootstrap']);
+	var modulo = angular.module('appModule', ['ngRoute', 'ui.bootstrap','datatables']);
 
 	modulo.config(['$routeProvider',
 
@@ -43,14 +43,11 @@
 				});
 				
 		}
-
 	])
 
 
 	.controller('AppCtrl', ["$scope", "$rootScope",
 		function() {
-
-
 		}
 
 	]);

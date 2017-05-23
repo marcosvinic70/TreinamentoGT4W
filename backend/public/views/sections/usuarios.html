@@ -1,8 +1,7 @@
 
-<div class="container">
-  <div class="panel panel-group panel-default">
+<div class="container"><!--
+  <div class="panel panel-group panel-default"> 
     <div class="panel-body">
-      <h4>Buscar Usuários:</h4>
       <div class="row">
         <div method="POST" action="action" class="navbar-form navbar-left">
           <form name="buscaUsuarios" method="get" action="">
@@ -16,11 +15,12 @@
         </div>
       </div>
     </div>
-  </div>
+  </div>-->
   <div class="panel panel-group panel-default">
     <div class="panel-body">
+      <h4>Buscar Usuários:</h4>
       <div class="panel panel-default">
-        <table id="tabela" class="table table-hover sortable">
+        <table id="tabela" datatable="ng" data-page-length="5" class="table table-hover">
           <thead>
             <tr>
               <th>	Id</th>
@@ -62,11 +62,6 @@
             </tr>
           </tbody>
         </table>
-        <script>
-          var newTableObject = document.getElementById("tabela");
-          sorttable.makeSortable(newTableObject);
-          
-        </script>
       </div>
     </div>
   </div>
