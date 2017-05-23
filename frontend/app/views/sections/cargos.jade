@@ -1,33 +1,19 @@
 .container
-    //.panel.panel-group.panel-default
-        .panel-body
-            h4 Buscar Cargos:
-            .row
-                .navbar-form.navbar-left(method="POST", action)
-                    form(name="buscaCargos", method="get" , action = "")
-                        form.form-group
-                            div.input
-                                input.form-control(type="text", name="nomeCargo", placeholder = "Nome do Cargo")
-                                input.form-control(type="submit", value="Procurar")
     .panel.panel-group.panel-default
         .panel-body
-            h4 Buscar Cargos:
-            .panel.panel-default
+            h4 Lista de Cargos:
+            .panel.panel-default.panelTable
                 table.table.table-hover.sortable(id="tabela",datatable='ng',data-page-length='5')
                     thead.thead-inverse
                         tr
                             th	Id
                             th	Nome
-                            th(width="50px")
-                            th(width="10px")
                             th(width="10px")
                             th(width="10px")
                     tbody
                         tr(ng-repeat=("cargo in listaCargos"))
                             td	{{cargo.id}}
                             td	{{cargo.nome}}
-                            td
-                            td(width="10px")
                             td(width="10px")
                                 a.span.glyphicon.glyphicon-edit(ng-click= "editarCargo(cargo.id)",title="Editar Cargo")
                             td(width="10px")

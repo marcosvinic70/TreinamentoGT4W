@@ -10,8 +10,8 @@
 
 				return request.get("perfis");
 			};
-			this.removerPerfil = function(id){
-				request.post('removerPerfil/'+id);
+			this.removerPerfil = function(id, successCallback, errorCallback){
+				request.post('removerPerfil/'+id,successCallback,errorCallback);
 			};
 			this.validacao = function()
 			{

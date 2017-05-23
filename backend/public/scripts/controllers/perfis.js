@@ -16,8 +16,16 @@
 			};
 
 			$scope.RemoverPerfil = function(){
-				perfisService.removerPerfil($scope.idRemocao);
-				$scope.validacao();
+				perfisService.removerPerfil($scope.idRemocao,function(response){
+					Mensagem.exibir(response.text, 'success');
+                    $location.path('/perfis');
+                },
+	                function(error) {
+	                    Mensagem.exibir(error, 'error');
+	                }
+                );
+			
+				//$scope.validacao();
 				$scope.inicio();
 				$('#modal').modal('hide');
 			};
@@ -32,11 +40,10 @@
 
 
 
-			$scope.validacao = function(){
+			/*$scope.validacao = function(){
 
 				perfisService.validacao().success(function(result){//result chegando NULL por motivos inimaginaveis
 					$scope.mensagemDeValidacao = result;
-					alert('ta foda kra');
 					if($scope.mensagemDeValidacao.mensagemErro !== null)
 						alert('$scope.mensagemDeValidacao.mensagemErro');
 					
@@ -46,6 +53,6 @@
 					
 				});
 				return;
-			};
+			};*/
 		});
 }());

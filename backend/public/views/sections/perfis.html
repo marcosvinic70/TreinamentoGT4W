@@ -1,31 +1,14 @@
 
-<div class="container"><!--.panel.panel-group.panel-default
-  <div class="panel-body">
-    <h4>Buscar Perfis de Usuário:</h4>
-    <div class="row">
-      <div method="POST" action="action" class="navbar-form navbar-left">
-        <form name="buscaPerfis" method="get" action="">
-          <form class="form-group">
-            <div class="input">
-              <input type="text" name="nomePerfil" placeholder="Nome do Perfil de Usuário" class="form-control"/>
-              <input type="submit" value="Procurar" class="form-control"/>
-            </div>
-          </form>
-        </form>
-      </div>
-    </div>
-  </div>-->
+<div class="container">
   <div class="panel panel-group panel-default">
     <div class="panel-body">
-      <h4>Buscar Perfis de Usuário:</h4>
-      <div class="panel panel-default">
+      <h4>Lista de Perfis de Usuário:</h4>
+      <div class="panel panel-default panelTable">
         <table id="tabela" datatable="ng" data-page-length="5" class="table table-hover sortable">
           <thead class="thead-inverse">
             <tr>
               <th>	Id</th>
               <th>	Nome</th>
-              <th width="50px"></th>
-              <th width="10px"></th>
               <th width="10px"></th>
               <th width="10px"></th>
             </tr>
@@ -33,9 +16,7 @@
           <tbody>
             <tr ng-repeat="perfil in listaPerfis">
               <td> {{perfil.id}}</td>
-              <td> {{perfil.nome | lowercase}}</td>
-              <td></td>
-              <td width="10px"></td>
+              <td> {{perfil.nome}}</td>
               <td width="10px"><a href="#/" title="Editar Perfil" class="span glyphicon glyphicon-edit"></a></td>
               <td width="10px"><a ng-click="ModalRemover(perfil.id)" data-toggle="modal" title="Remover Perfil" style="color:red" class="span glyphicon glyphicon-trash"></a></td>
             </tr>

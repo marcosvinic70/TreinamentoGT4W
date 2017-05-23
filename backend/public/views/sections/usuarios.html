@@ -1,34 +1,16 @@
 
-<div class="container"><!--
-  <div class="panel panel-group panel-default"> 
-    <div class="panel-body">
-      <div class="row">
-        <div method="POST" action="action" class="navbar-form navbar-left">
-          <form name="buscaUsuarios" method="get" action="">
-            <form class="form-group">
-              <div class="input">
-                <input type="text" name="nomeUsuario" placeholder="Nome do Usuário" class="form-control"/>
-                <input type="submit" value="Procurar" class="form-control"/>
-              </div>
-            </form>
-          </form>
-        </div>
-      </div>
-    </div>
-  </div>-->
+<div class="container">
   <div class="panel panel-group panel-default">
     <div class="panel-body">
-      <h4>Buscar Usuários:</h4>
-      <div class="panel panel-default">
+      <h4>Lista de Usuários:</h4>
+      <div class="panel panel-default panelTable">
         <table id="tabela" datatable="ng" data-page-length="5" class="table table-hover">
           <thead>
             <tr>
               <th>	Id</th>
               <th>	Nome</th>
               <th>	CPF</th>
-              <th>	Cargo</th>
-              <th width="50px"></th>
-              <th width="10px"></th>
+              <th width="180px">	Cargo</th>
               <th width="10px"></th>
               <th width="10px"></th>
             </tr>
@@ -39,28 +21,22 @@
               <td>	{{usuario.nome}}</td>
               <td>	{{usuario.cpf}}</td>
               <td>	{{usuario.cargo.nome}}</td>
-              <td></td>
-              <td width="10px"></td>
               <td width="10px"><a href="#/editarUsuario/{{usuario.id}}" title="Editar Usuário" class="span glyphicon glyphicon-edit"></a></td>
               <td width="10px"><a ng-click="ModalRemover(usuario.id)" data-toggle="modal" title="Remover Usuário" style="color:red" class="span glyphicon glyphicon-trash">		</a></td>
             </tr>
           </tbody>
-        </table>
-        <table class="table table-hover">
-          <tbody>
-            <tr>
-              <td> </td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <th width="50px"></th>
-              <th width="10px"></th>
-              <th width="10px"></th>
-              <th width="10px"><a href="#/adicionarUsuario" title="Cadastrar Usuário" style="color:green" class="span glyphicon glyphicon-plus"></a></th>
-            </tr>
-          </tbody>
+          <table class="table table-hover">
+            <tbody>
+              <tr>
+                <td> </td>
+                <td></td>
+                <td></td>
+                <th width="50px"></th>
+                <th width="10px"></th>
+                <th width="10px"><a href="#/adicionarUsuario" title="Cadastrar Usuário" style="color:green" class="span glyphicon glyphicon-plus"></a></th>
+              </tr>
+            </tbody>
+          </table>
         </table>
       </div>
     </div>

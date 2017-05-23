@@ -7,6 +7,7 @@ POST    /cadastrarUsuario/{id}                  UsuariosController.cadastrarUsua
 GET     /usuarios								UsuariosController.listarUsuarios
 POST    /removerUsuario/{id}				    UsuariosController.removerUsuario
 POST    /editarUsuario/{id}				        UsuariosController.buscarUsuarioParaEditar
+GET     /historicoUsuarios                      UsuariosController.listarHistoricoUsuarios
 
 #ROTA DE CARGOS
 GET     /cargos 								CargosController.listarCargos
@@ -16,11 +17,6 @@ GET     /cargoParaEditar                        CargosController.editarCargo
 #ROTA DE PERFIS
 GET     /perfis 								PerfisController.listarPerfis
 POST    /removerPerfil/{id}       				PerfisController.removerPerfil
-
-#ROTA DE UTILIDADES
-GET     /validacao            					Utilidades.validacao
-GET     /historicoUsuarios                      UsuariosController.listarHistoricoUsuarios
-
 
 
 # ROTA PARA OS ARQUIVOS ESTÁTICOS

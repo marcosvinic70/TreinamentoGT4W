@@ -39,12 +39,18 @@
           </div>
         </div>
       </nav>
+      <script>
+        $('li > a').click(function() {
+         $('li').removeClass();
+         $(this).parent().addClass('active');
+        });
+      </script>
     </header>
     <!--Conteúdo da página-->
     <div ng-view></div>
     <!--Footer-->
     <div class="footer container-fluid text-center">
-      <p>GT4W</p>
+      <p>Desenvolvido por GT4W</p>
     </div>
   </body>
   <script src="scripts/app.js"></script>

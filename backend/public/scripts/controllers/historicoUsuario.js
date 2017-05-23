@@ -9,6 +9,7 @@
 
 			historicoUsuariosService.historicoUsuarios().success(function(result){
 			    $scope.listaHistoricoUsuarios = result;
+
 			});
 		});
 }());
