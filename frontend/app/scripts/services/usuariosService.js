@@ -30,5 +30,9 @@
 			this.gravarAlteracoes = function(id,formulario) {
 				return request.post('cadastrarUsuario/'+id , formulario);
 			};
+			
+			this.historicoUsuarios = function() {
+				return request.get('historicoUsuarios');
+			};
 		});
 })();

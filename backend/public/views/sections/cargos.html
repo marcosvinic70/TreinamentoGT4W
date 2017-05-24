@@ -2,6 +2,7 @@
 <div class="container">
   <div class="panel panel-group panel-default">
     <div class="panel-body">
+      <div class="panel-heading"></div>
       <h4>Lista de Cargos:</h4>
       <div class="panel panel-default panelTable">
         <table id="tabela" datatable="ng" data-page-length="5" class="table table-hover sortable">
@@ -18,7 +19,7 @@
               <td>	{{cargo.id}}</td>
               <td>	{{cargo.nome}}</td>
               <td width="10px"><a href="#/editarCargo/{{cargo.id}}" title="Editar Cargo" class="span glyphicon glyphicon-edit"></a></td>
-              <td width="10px"><a ng-click="ModalRemover(cargo.id)" data-toggle="modal" title="Remover Cargo" style="color:red" class="span glyphicon glyphicon-trash"></a></td>
+              <td width="10px"><a ng-click="ModalRemover(cargo.id)" data-toggle="modal" title="Remover Cargo" style="color:red" class="cursor span glyphicon glyphicon-trash"></a></td>
             </tr>
           </tbody>
         </table>

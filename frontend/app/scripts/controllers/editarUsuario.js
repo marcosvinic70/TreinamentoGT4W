@@ -3,7 +3,7 @@
 	'use strict';
 	angular
 		.module('appModule')
-		.controller('EditarUsuariosController', function($scope,$location,$routeParams) {
+		.controller('EditarUsuariosController', function($scope,$location,$routeParams,usuariosService) {
 
 			$scope.formulario = {};
 			usuariosService.buscarUsuario($routeParams.id).success(function(result){

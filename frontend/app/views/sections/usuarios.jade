@@ -1,6 +1,7 @@
 .container
 	.panel.panel-group.panel-default
 		.panel-body
+			.panel-heading
 			h4 Lista de Usuários:
 			.panel.panel-default.panelTable
 				table.table.table-hover(id="tabela", datatable='ng',data-page-length='5')
@@ -20,11 +21,11 @@
 							td	{{usuario.cpf}}
 							td	{{usuario.cargo.nome}}
 							td(width="10px")
-								a.span.glyphicon.glyphicon-eye-open(ng-click="ModalVisualizar(usuario.id)",title="Visualizar Usuário",data-toggle="modal")
+								a.cursor.span.glyphicon.glyphicon-eye-open(ng-click="ModalVisualizar(usuario.id)",title="Visualizar Usuário",data-toggle="modal")
 							td(width="10px")
 								a.span.glyphicon.glyphicon-edit(href="#/editarUsuario/{{usuario.id}}",title="Editar Usuário")
 							td(width="10px")
-								a.span.glyphicon.glyphicon-trash(ng-click= "ModalRemover(usuario.id)",data-toggle="modal", title="Remover Usuário",style="color:red")		
+								a.cursor.span.glyphicon.glyphicon-trash(ng-click= "ModalRemover(usuario.id)",data-toggle="modal", title="Remover Usuário",style="color:red")		
 					table.table.table-hover
 						tbody
 							tr

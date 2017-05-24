@@ -13,10 +13,6 @@
 			this.removerPerfil = function(id){
 				return request.post('removerPerfil/'+id);
 			};
-			this.validacao = function()
-			{
-				return request.get('validacao');
-			};
 	});
 
 })();

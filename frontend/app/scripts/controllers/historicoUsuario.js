@@ -4,10 +4,10 @@
 
 	angular
 		.module('appModule')
-		.controller('HistoricoUsuariosController', function($scope,$location, historicoUsuariosService) {
+		.controller('HistoricoUsuariosController', function($scope,$location, usuariosService) {
 
 
-			historicoUsuariosService.historicoUsuarios().success(function(result){
+			usuariosService.historicoUsuarios().success(function(result){
 			    $scope.listaHistoricoUsuarios = result;
 
 			});

@@ -2,6 +2,7 @@
 <div class="container">
   <div class="panel panel-group panel-default">
     <div class="panel-body">
+      <div class="panel-heading"></div>
       <h4>Lista de Usuários:</h4>
       <div class="panel panel-default panelTable">
         <table id="tabela" datatable="ng" data-page-length="5" class="table table-hover">
@@ -22,9 +23,9 @@
               <td>	{{usuario.nome}}</td>
               <td>	{{usuario.cpf}}</td>
               <td>	{{usuario.cargo.nome}}</td>
-              <td width="10px"><a ng-click="ModalVisualizar(usuario.id)" title="Visualizar Usuário" data-toggle="modal" class="span glyphicon glyphicon-eye-open"></a></td>
+              <td width="10px"><a ng-click="ModalVisualizar(usuario.id)" title="Visualizar Usuário" data-toggle="modal" class="cursor span glyphicon glyphicon-eye-open"></a></td>
               <td width="10px"><a href="#/editarUsuario/{{usuario.id}}" title="Editar Usuário" class="span glyphicon glyphicon-edit"></a></td>
-              <td width="10px"><a ng-click="ModalRemover(usuario.id)" data-toggle="modal" title="Remover Usuário" style="color:red" class="span glyphicon glyphicon-trash">		</a></td>
+              <td width="10px"><a ng-click="ModalRemover(usuario.id)" data-toggle="modal" title="Remover Usuário" style="color:red" class="cursor span glyphicon glyphicon-trash">		</a></td>
             </tr>
           </tbody>
           <table class="table table-hover">
