@@ -1,35 +1,18 @@
 .container
 	.panel.panel-group.panel-default
-		.panel-body
-			h4 Buscar Usuários:
-			.row
-				.navbar-form.navbar-left(method="POST", action)
-					form(name="buscaUsuarios", method="get" , action = "")
-						form.form-group
-							div.input
-								input.form-control(type="text", name="nomeUsuario", placeholder = "Nome do Usuário")
-								input.form-control(type="submit", value="Procurar")
-	.panel.panel-group.panel-default
-		.panel-body
-			.panel.panel-default
-				table.table.table-hover.sortable(id="tabela")
-					thead.thead-inverse
-						tr
-							th	Id
-							th	Nome
-							th	CPF
-							th	Cargo
-							th(width="50px")
-							th(width="10px")
-							th(width="10px")
-							th(width="10px")
-					tbody
-						tr(ng-repeat=("usuario in listaHistoricoUsuarios"))
-							td	{{usuario.id}}
-							td	{{usuario.nome}}
-							td	{{usuario.cpf}}
-							td	{{usuario.cargo}}
-							td
-				script
-					var newTableObject = document.getElementById("tabela");
-					sorttable.makeSortable(newTableObject);
+			.panel-body
+				h4 Buscar Usuários:
+				.panel.panel-default.panelTable
+					table.table.table-hover(id="tabela", datatable='ng',data-page-length='5')
+						thead
+							tr
+								th	Id
+								th	Nome
+								th	CPF
+								th	Cargo
+						tbody
+							tr(ng-repeat=("usuario in listaHistoricoUsuarios"))
+								td	{{usuario.id}}
+								td	{{usuario.nome}}
+								td	{{usuario.cpf}}
+								td	{{usuario.cargo}}

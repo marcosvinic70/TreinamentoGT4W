@@ -9,7 +9,6 @@ import play.*;
 import play.Play;
 import play.mvc.*;
 import sun.rmi.runtime.Log;
-import util.MensagemValidacao;
 import java.util.*;
 
 import models.*;

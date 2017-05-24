@@ -8,6 +8,9 @@
 			$scope.formulario = {};
 			usuariosService.buscarUsuario($routeParams.id).success(function(result){
 				$scope.usuario = result;
+				$scope.formulario = $scope.usuario;
+				$scope.formulario.cargo = $scope.usuario.cargo.nome;
+
 			});
 
 			usuariosService.carregarCargos().success(function(result){
@@ -16,6 +19,7 @@
 
 			usuariosService.carregarPerfis().success(function(result){
 				$scope.listaPerfis = result;
+
 			});
 
 			$scope.editarUsuario = function() {
@@ -23,7 +27,7 @@
 				angular.forEach($scope.formulario.perfisModelo, function(elemento) {
 					$scope.formulario.array.push(elemento);
 				});
-				usuariosService.gravarAlteracoes($scope.formulario,$scope.usuario.id);
+				usuariosService.gravarAlteracoes($routeParams.id,$scope.formulario);
 			};
 	});
 }());

@@ -8,7 +8,6 @@ import org.postgresql.jdbc2.optional.SimpleDataSource;
 import play.*;
 import play.Play;
 import play.mvc.*;
-import util.MensagemValidacao;
 import java.util.*;
 
 import models.*;
@@ -25,20 +24,21 @@ public class UsuariosController extends BaseController{
 	}
 	
 	public static void cadastrarUsuario(JsonObject cadastro, Long id) {
-
+			
+		//passar para uma função
 		Object sexoTeste =  cadastro.get("sexo");
 		String sexo = null;
 		if( sexoTeste != null) {
 			sexo = cadastro.get("sexo").getAsString();
 		}
-
+		
 		Object dataTeste = cadastro.get("dataNascimento");
 		Date data = null;
 		if(dataTeste != null) {
 			data = DateDeserializer.parseDate(cadastro.get("dataNascimento").getAsJsonPrimitive().getAsString());
 		}
 
-		Object cargoTeste = cadastro.get("cargoNovo");
+		Object cargoTeste = cadastro.get("cargoNovo");	
 		String cargo;
 		if(cargoTeste == null) {
 			cargo = cadastro.get("cargo").getAsString();
@@ -46,34 +46,64 @@ public class UsuariosController extends BaseController{
 		else {
 			cargo = cadastro.get("cargoNovo").getAsString();
 		}
+		List<String> perfis = null;
+		
+		if(cadastro.get("array").toString() != null)
+			perfis = tratarArrayFrontend(cadastro.get("array").toString());
+			
 		
 		if(Usuario.find("cpf",cadastro.get("cpf").getAsLong()).first() == null && id == 0) {
-			List<String> perfis = null;
-			perfis = tratarArrayFrontend(cadastro.get("array").toString());
+
 			Usuario user;
 
 			user = new Usuario(cadastro.get("nome").getAsString(),cadastro.get("cpf").getAsLong(),cargo,perfis,sexo,data);
 
 			user.save();
 		}
-		else {//caso exista, para editar
+		else {
 			
-			List<String> perfis = null;
-			perfis = tratarArrayFrontend(cadastro.get("array").toString());
+			//caso exista, para editar
+
 			Usuario user = Usuario.findById(id);
-			/*
-			user.cpf = cadastro.get("cpf").getAsLong());
+			user.cpf = cadastro.get("cpf").getAsLong();
 			user.sexo = sexo;
+			Cargo c = Cargo.find("nome",cargo).first();
 			
-			user.cargo = cargo;
-			user.setDataNascimento(data);
-			user.setNome(cadastro.get("nome").getAsString());
-			user.setListaPerfil(perfis);
-			*/
+	        if(c == null) {
+	            user.cargo = new Cargo(cargo);
+	            user.cargo.save();
+	        }
+	        else {
+	            user.cargo = c;
+	        }
+	        
+			user.dataNascimento = data;
+			user.nome = cadastro.get("nome").getAsString();
+
+			user.listaPerfil.clear();
+			
+			if(perfis != null)
+			{
+				for(String perfil : perfis)
+	            {
+	                PerfilUsuario p = PerfilUsuario.find("nome",perfil).first();
+	                if(p == null) {
+	                    PerfilUsuario pAux = new PerfilUsuario(perfil);
+	                    pAux.save();
+	                    user.listaPerfil.add(pAux);
+	                }
+	                else {
+	                	user.listaPerfil.add(p);
+	                }
+	            }
+				
+			}
 			user.save();
 		}
 	}
-	public static void buscarUsuarioParaEditar(Long id){//usuario do id que o usuarioController enviou, agora sendo enviado para editarUsuarioController
+
+	
+	public static void buscarUsuarioParaEditar(Long id){
 		Usuario user = Usuario.findById(id);
 		renderJSON(user);
 	}
@@ -87,22 +117,12 @@ public class UsuariosController extends BaseController{
 		
 	}
 	public static void removerCargo(Long id){
-
 		
-		try{
 			Cargo cargo = Cargo.findById(id);
 			
 			System.out.println(id);
 	
 			cargo.delete();
-			
-		}
-		catch(Exception e)
-		{
-			String mensagemErro = "Impossível remover este cargo, pois o mesmo está vinculado a um usuário";
-			renderJSON(mensagemErro);
-			
-		}
 		
 	}
 	
@@ -113,14 +133,8 @@ public class UsuariosController extends BaseController{
 		array = array.replaceAll("\\[","");
 		array = array.replaceAll("]","");
 		array = array.replaceAll("\"","");
-		array = array.replaceAll(" ","");
 		String[] novoArray = array.split(",");
 		List<String> auxiliar = new ArrayList<String>();
-
-		/*for(String s: novoArray) {
-			auxiliar.add(s);
-		}*/
-
 		Collections.addAll(auxiliar, novoArray);
 
 		return auxiliar;

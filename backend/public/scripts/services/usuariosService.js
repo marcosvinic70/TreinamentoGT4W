@@ -27,8 +27,8 @@
 				return request.post('editarUsuario/'+id);
 			};
 
-			this.gravarAlteracoes = function(id) {
-				return request.post('cadastrarUsuario/'+id);
+			this.gravarAlteracoes = function(id,formulario) {
+				return request.post('cadastrarUsuario/'+id , formulario);
 			};
 		});
 })();

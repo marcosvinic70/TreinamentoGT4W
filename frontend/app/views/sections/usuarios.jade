@@ -1,28 +1,15 @@
 .container
-	//
-		.panel.panel-group.panel-default 
-			.panel-body
-				.row
-					.navbar-form.navbar-left(method="POST", action)
-						form(name="buscaUsuarios", method="get" , action = "")
-							form.form-group
-								div.input
-									input.form-control(type="text", name="nomeUsuario", placeholder = "Nome do Usuário")
-									input.form-control(type="submit", value="Procurar") 
-
 	.panel.panel-group.panel-default
 		.panel-body
-			h4 Buscar Usuários:
-			.panel.panel-default
+			h4 Lista de Usuários:
+			.panel.panel-default.panelTable
 				table.table.table-hover(id="tabela", datatable='ng',data-page-length='5')
 					thead
 						tr
 							th	Id
 							th	Nome
 							th	CPF
-							th	Cargo
-							th(width="50px")
-							th(width="10px")
+							th(width="180px")	Cargo
 							th(width="10px")
 							th(width="10px")
 					tbody
@@ -31,26 +18,20 @@
 							td	{{usuario.nome}}
 							td	{{usuario.cpf}}
 							td	{{usuario.cargo.nome}}
-							td
-							td(width="10px")
 							td(width="10px")
 								a.span.glyphicon.glyphicon-edit(href="#/editarUsuario/{{usuario.id}}",title="Editar Usuário")
 							td(width="10px")
 								a.span.glyphicon.glyphicon-trash(ng-click= "ModalRemover(usuario.id)",data-toggle="modal", title="Remover Usuário",style="color:red")		
-				table.table.table-hover
-					tbody
-						tr
-							td 
-							td
-							td
-							td
-							td
-							td
-							th(width="50px")
-							th(width="10px")
-							th(width="10px")
-							th(width="10px")
-								a.span.glyphicon.glyphicon-plus(href="#/adicionarUsuario",title="Cadastrar Usuário",style="color:green")
+					table.table.table-hover
+						tbody
+							tr
+								td 
+								td
+								td
+								th(width="50px")
+								th(width="10px")
+								th(width="10px")
+									a.span.glyphicon.glyphicon-plus(href="#/adicionarUsuario",title="Cadastrar Usuário",style="color:green")
 
 #modal.modal.fade(tabindex="-1", role="dialog", aria-labelledby="modal", aria-hidden="true")
 	.modal-dialog
