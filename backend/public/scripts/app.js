@@ -36,6 +36,10 @@
                     templateUrl: 'views/sections/editarCargos.html',
                     controller: 'EditarCargosController',
                 })
+                .when("/editarPerfil/:id", {
+                    templateUrl: 'views/sections/editarPerfil.html',
+                    controller: 'EditarPerfisController',
+                })
 				.otherwise({
 					redirectTo: '/',
 					templateUrl: 'views/sections/inicial.html',

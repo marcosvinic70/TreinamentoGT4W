@@ -34,9 +34,6 @@
 					alert($scope.message);
 					$window.location.reload();
 				});
-				
-				//alert($scope.message);
-				$('#modal').modal('hide');
 			};
 
 			var vm = this;

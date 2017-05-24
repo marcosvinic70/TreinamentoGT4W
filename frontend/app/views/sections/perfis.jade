@@ -15,7 +15,7 @@
                             td  {{perfil.id}}
                             td  {{perfil.nome}}
                             td(width="10px")
-                                a.span.glyphicon.glyphicon-edit(href="#/",title="Editar Perfil")
+                                a.span.glyphicon.glyphicon-edit(href="#/editarPerfil/{{perfil.id}}",title="Editar Perfil")
                             td(width="10px")
                                 a.span.glyphicon.glyphicon-trash(ng-click= "ModalRemover(perfil.id)",data-toggle="modal", title="Remover Perfil",style="color:red")
 
