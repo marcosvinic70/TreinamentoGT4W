@@ -2,11 +2,11 @@
     #panelprincipal.panel.panel-default
         .panel.panel-heading
             .panel-body
-                form(name="editarCargo", method="get", ng-submit="")
-                    h4 Editar Cargo: {{nomeEdicao}}
+                form(name="editarCargo", method="get", ng-submit="salvarCargoEditado()")
+                    h4 Editar Cargo: {{cargoEditado.nome}}
                     div.input
                         .form-group
                             label(for="nome") Nome*:
-                            input.form-control(type="text", name="nomeCargo",id = "nomeCargo")
+                            input.form-control(type="text", name="nome",id = "nomeCargo", ng-model="nomeCargo", value="{{cargoEditado.nome}}", required="required")
                     div.actions
                         input.form-control(type="submit", value="Salvar Mudanças")

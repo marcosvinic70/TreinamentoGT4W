@@ -4,7 +4,7 @@
 
 	angular
 		.module('appModule')
-		.controller('AdicionarUsuarioController', function($scope,$location, adicionarUsuarioService,usuariosService) {
+		.controller('AdicionarUsuarioController', function($scope,$location, adicionarUsuarioService) {
 
 			$scope.formulario = {};
 
@@ -27,16 +27,9 @@
 					alert($scope.message);
 				});
 
-				$scope.inicio();
+				$location.path('/usuarios');
 
 
-			};
-
-			$scope.inicio = function(){
-					usuariosService.usuarios().success(function(result){
-				    $scope.listaUsuarios = result;
-				    $location.path('/usuarios');
-				});
 			};
 
 		});

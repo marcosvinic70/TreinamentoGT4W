@@ -33,8 +33,14 @@ public class CargosController extends BaseController{
 		}
 	}
 
-	public static void editarCargo(Long id) {
+	public static void buscaEditarCargo(Long id) {
 		Cargo cargo = Cargo.findById(id);
 		renderJSON(cargo);
+	}
+
+	public static void editarCargo(Long id, String nomeEdicao) {
+		Cargo cargo = Cargo.findById(id);
+		cargo.editarNomeCargo(nomeEdicao);
+		cargo.save();
 	}
 }
