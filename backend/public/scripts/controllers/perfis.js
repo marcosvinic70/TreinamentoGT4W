@@ -16,16 +16,11 @@
 			};
 
 			$scope.RemoverPerfil = function(){
-				perfisService.removerPerfil($scope.idRemocao,function(response){
-					Mensagem.exibir(response.text, 'success');
-                    $location.path('/perfis');
-                },
-	                function(error) {
-	                    Mensagem.exibir(error, 'error');
-	                }
-                );
-			
-				//$scope.validacao();
+				perfisService.removerPerfil($scope.idRemocao).success(function(result){
+					$scope.message = result;
+					alert($scope.message);
+				});
+
 				$scope.inicio();
 				$('#modal').modal('hide');
 			};
@@ -37,22 +32,5 @@
 				    $location.path('/perfis');
 				});
 			};
-
-
-
-			/*$scope.validacao = function(){
-
-				perfisService.validacao().success(function(result){//result chegando NULL por motivos inimaginaveis
-					$scope.mensagemDeValidacao = result;
-					if($scope.mensagemDeValidacao.mensagemErro !== null)
-						alert('$scope.mensagemDeValidacao.mensagemErro');
-					
-					else if($scope.mensagemDeValidacao.mensagemSucesso !== null)
-						alert('$scope.mensagemDeValidacao.mensagemSucesso');
-					
-					
-				});
-				return;
-			};*/
 		});
 }());

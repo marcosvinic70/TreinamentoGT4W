@@ -17,15 +17,14 @@
 			};
 
 			$scope.RemoverUsuario = function(){
-				usuariosService.removerUsuario($scope.idRemocao);
+				usuariosService.removerUsuario($scope.idRemocao).success(function(result){
+					$scope.message = result;
+					alert($scope.message);
+				});
+					
 				$scope.inicio();
 				$('#modal').modal('hide');
 			};
-
-			$scope.EditarUsuario = function(id){
-				$location.path('/editarUsuario/'+id);
-			};
-
 			$scope.inicio = function(){
 					usuariosService.usuarios().success(function(result){
 				    $scope.listaUsuarios = result;

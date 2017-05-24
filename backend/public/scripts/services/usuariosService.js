@@ -12,7 +12,7 @@
 			};
 
 			this.removerUsuario = function(id){
-				request.post('removerUsuario/'+id);
+				return request.post('removerUsuario/'+id);
 			};
 
 			this.carregarCargos = function() {

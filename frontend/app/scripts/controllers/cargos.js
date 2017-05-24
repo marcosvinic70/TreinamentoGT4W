@@ -8,7 +8,6 @@
 
 			cargosService.cargos().success(function(result){
 				$scope.listaCargos = result;
-				//$scope.erro = null;
 			});
 
 			$scope.ModalRemover = function(id){
@@ -17,7 +16,10 @@
 			};
 
 			$scope.RemoverCargo = function(){
-				cargosService.removerCargo($scope.idRemocao);
+				cargosService.removerCargo($scope.idRemocao).success(function(result){
+					$scope.message = result;
+					alert($scope.message);
+				});
 				$scope.inicio();
 				$('#modal').modal('hide');
 			};
@@ -35,12 +37,5 @@
 				    $location.path('/cargos');
 				});
 			};
-
-			//$scope.erro = function(){
-			//	if($scope.erro != null)
-			//	{
-			//		alert($scope.erro);
-			//	}
-			//}
 		});
 }());
