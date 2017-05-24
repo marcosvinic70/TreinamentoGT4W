@@ -1,0 +1,21 @@
+
+<div class="container">
+  <div id="panelprincipal" class="panel panel-default">
+    <div class="panel panel-heading">
+      <div class="panel-body">
+        <form name="editarPerfil" method="get" ng-submit="salvarPerfilEditado()">
+          <h4>Editar Perfil: {{perfilEditado.nome}}</h4>
+          <div class="input">
+            <div class="form-group">
+              <label for="nome">Nome*:</label>
+              <input type="text" name="nome" id="nomeCargo" ng-model="nomePerfil" value="{{perfilEditado.nome}}" required="required" class="form-control"/>
+            </div>
+          </div>
+          <div class="actions">
+            <input type="submit" value="Salvar Mudanças" class="form-control"/>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

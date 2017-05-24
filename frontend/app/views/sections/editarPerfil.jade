@@ -1,0 +1,12 @@
+.container
+    #panelprincipal.panel.panel-default
+        .panel.panel-heading
+            .panel-body
+                form(name="editarPerfil", method="get", ng-submit="salvarPerfilEditado()")
+                    h4 Editar Perfil: {{perfilEditado.nome}}
+                    div.input
+                        .form-group
+                            label(for="nome") Nome*:
+                            input.form-control(type="text", name="nome",id = "nomeCargo", ng-model="nomePerfil", value="{{perfilEditado.nome}}", required="required")
+                    div.actions
+                        input.form-control(type="submit", value="Salvar Mudanças")

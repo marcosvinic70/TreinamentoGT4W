@@ -18,6 +18,8 @@ POST    /gravarCargo/{id}/{nomeEdicao}	        CargosController.editarCargo
 #ROTA DE PERFIS
 GET     /perfis 								PerfisController.listarPerfis
 POST    /removerPerfil/{id}       				PerfisController.removerPerfil
+POST    /editarPerfil/{id}	                    PerfisController.buscaEditarPerfil
+POST    /gravarPerfil/{id}/{nomeEdicao}	        PerfisController.editarPerfil
 
 
 # ROTA PARA OS ARQUIVOS ESTÁTICOS

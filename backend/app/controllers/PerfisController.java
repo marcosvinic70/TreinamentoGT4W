@@ -31,4 +31,15 @@ public class PerfisController extends BaseController{
 			renderText("Impossível remover este perfil, pois o mesmo está vinculado a um usuário!");
 		}
 	}
+
+	public static void buscaEditarPerfil(Long id) {
+		PerfilUsuario perfil = PerfilUsuario.findById(id);
+		renderJSON(perfil);
+	}
+
+	public static void editarPerfil(Long id, String nomeEdicao) {
+		PerfilUsuario perfil = PerfilUsuario.findById(id);
+		perfil.editarPerfil(nomeEdicao);
+		perfil.save();
+	}
 }

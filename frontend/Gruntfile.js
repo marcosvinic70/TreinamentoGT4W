@@ -17,6 +17,7 @@ module.exports = function(grunt) {
 			'sections/editarUsuario.jade',
 			'sections/historicoUsuarios.jade',
 			'sections/editarCargos.jade',
+			'sections/editarPerfil.jade',
 		]
 	};
 		
