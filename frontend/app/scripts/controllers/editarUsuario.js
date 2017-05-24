@@ -3,7 +3,7 @@
 	'use strict';
 	angular
 		.module('appModule')
-		.controller('EditarUsuariosController', function($scope,$routeParams,usuariosService) {
+		.controller('EditarUsuariosController', function($scope,$location,$routeParams) {
 
 			$scope.formulario = {};
 			usuariosService.buscarUsuario($routeParams.id).success(function(result){
@@ -27,7 +27,12 @@
 				angular.forEach($scope.formulario.perfisModelo, function(elemento) {
 					$scope.formulario.array.push(elemento);
 				});
-				usuariosService.gravarAlteracoes($routeParams.id,$scope.formulario);
+				usuariosService.gravarAlteracoes($routeParams.id,$scope.formulario).success(function(result){
+					$scope.message = result;
+					alert($scope.message);
+				});
+
+				$location.path('/usuarios');
 			};
 	});
 }());
