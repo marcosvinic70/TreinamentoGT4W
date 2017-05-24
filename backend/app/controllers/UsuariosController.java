@@ -25,7 +25,6 @@ public class UsuariosController extends BaseController{
 	
 	public static void cadastrarUsuario(JsonObject cadastro, Long id) {
 			
-		//passar para uma função
 		Object sexoTeste =  cadastro.get("sexo");
 		String sexo = null;
 		if( sexoTeste != null) {
@@ -50,19 +49,26 @@ public class UsuariosController extends BaseController{
 		
 		if(cadastro.get("array").toString() != null)
 			perfis = tratarArrayFrontend(cadastro.get("array").toString());
-			
 		
+		
+			//Caso n exista, adicionar...
 		if(Usuario.find("cpf",cadastro.get("cpf").getAsLong()).first() == null && id == 0) {
 
 			Usuario user;
 
 			user = new Usuario(cadastro.get("nome").getAsString(),cadastro.get("cpf").getAsLong(),cargo,perfis,sexo,data);
-
-			user.save();
+			try{
+				user.save();
+				renderText("Usuário adicionado com sucesso!!!");
+			}
+			catch(Exception e){
+				
+				renderText("Erro ao adicionar o usuário!!!");
+			}
 		}
 		else {
 			
-			//caso exista, para editar
+			//caso exista, editar...
 
 			Usuario user = Usuario.findById(id);
 			user.cpf = cadastro.get("cpf").getAsLong();
@@ -98,7 +104,14 @@ public class UsuariosController extends BaseController{
 	            }
 				
 			}
-			user.save();
+			try{
+				user.save();
+				renderText("Usuário editado com sucesso!!!");
+			}
+			catch(Exception e){
+				
+				renderText("Erro ao editar o usuário!!!");
+			}
 		}
 	}
 
@@ -112,17 +125,15 @@ public class UsuariosController extends BaseController{
 
 		Usuario user = Usuario.findById(id);
 		RegistroUsuario registro = new RegistroUsuario(user);
-		registro.save();
-		user.delete();
-		
-	}
-	public static void removerCargo(Long id){
-		
-			Cargo cargo = Cargo.findById(id);
+		try{
+			registro.save();
+			user.delete();
+			renderText("Usuário removido com sucesso!!!");
+		}
+		catch(Exception e){
 			
-			System.out.println(id);
-	
-			cargo.delete();
+			renderText("Erro ao remover o usuário!");
+		}
 		
 	}
 	

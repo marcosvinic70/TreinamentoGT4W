@@ -21,16 +21,16 @@ public class CargosController extends BaseController{
 	}
 
 	public static void removerCargo(Long id){
-
+		
+		Cargo cargo = Cargo.findById(id);
 		try{
-			Cargo cargo = Cargo.findById(id);
 			cargo.delete();
+			renderText("Cargo removido com sucesso!!!");
 		}
 		catch(Exception e)
 		{
-			renderJSON("Impossível remover este cargo, pois o mesmo está vinculado a um usuário");
+			renderText("Impossível remover este cargo, pois o mesmo está vinculado a um usuário");
 		}
-		
 	}
 
 	public static void buscaEditarCargo(Long id) {

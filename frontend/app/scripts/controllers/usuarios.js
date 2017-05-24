@@ -29,20 +29,11 @@
 			};
 
 			$scope.RemoverUsuario = function(){
-				usuariosService.removerUsuario($scope.idRemocao);
-				$scope.inicio();
-				$('#modal').modal('hide');
-			};
-
-			$scope.EditarUsuario = function(id){
-				$location.path('/editarUsuario/'+id);
-			};
-
-			$scope.inicio = function(){
-					usuariosService.usuarios().success(function(result){
-				    $scope.listaUsuarios = result;
-				    $location.path('/usuarios');
+				usuariosService.removerUsuario($scope.idRemocao).success(function(result){
+					$scope.message = result;
+					alert($scope.message);
 				});
+				$('#modal').modal('hide');
 			};
 
 			var vm = this;

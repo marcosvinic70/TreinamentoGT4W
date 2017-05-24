@@ -21,8 +21,14 @@ public class PerfisController extends BaseController{
 	public static void removerPerfil(Long id){
 
 		PerfilUsuario perfil = PerfilUsuario.findById(id);
-		perfil.delete();
+		try{
+			perfil.delete();
 
-		 renderJSON(new Message("Perfil Removido com Sucesso."));
+			renderText("Perfil removido com sucesso!!!");
+		}
+		catch(Exception e){
+			
+			renderText("Impossível remover este perfil, pois o mesmo está vinculado a um usuário!");
+		}
 	}
 }

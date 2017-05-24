@@ -13,8 +13,7 @@
 			};
 
 			this.removerCargo = function(id){
-				//passar variavel de erro?? como fazer
-				request.post('removerCargo/'+id);
+				return request.post('removerCargo/'+id);
 			};
 
 			this.cargoEditado = function(id) {
