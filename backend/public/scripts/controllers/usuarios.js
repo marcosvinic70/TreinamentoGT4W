@@ -4,7 +4,7 @@
 
 	angular
 		.module('appModule')
-		.controller('UsuariosController', function($scope, $location, usuariosService, DTOptionsBuilder) {
+		.controller('UsuariosController', function($scope, $location,$window, usuariosService, DTOptionsBuilder) {
 
 
 			usuariosService.usuarios().success(function(result){
@@ -32,7 +32,10 @@
 				usuariosService.removerUsuario($scope.idRemocao).success(function(result){
 					$scope.message = result;
 					alert($scope.message);
+					$window.location.reload();
 				});
+				
+				//alert($scope.message);
 				$('#modal').modal('hide');
 			};
 
