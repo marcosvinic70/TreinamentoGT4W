@@ -11,7 +11,7 @@
 			});
 
 			$scope.salvarCargoEditado = function() {
-				cargosService.salvarCargo($routeParams.id, $scope.nomeCargo).success(function(result){
+				cargosService.salvarCargo($routeParams.id,document.getElementsByName("nome")[0].value).success(function(result){
 					$scope.message = result;
 					alert($scope.message);
 			});

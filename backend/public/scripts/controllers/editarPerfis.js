@@ -11,7 +11,7 @@
 			});
 
 			$scope.salvarPerfilEditado = function() {
-				perfisService.salvarPerfil($routeParams.id, $scope.nomePerfil);
+				perfisService.salvarPerfil($routeParams.id,document.getElementsByName("nome")[0].value);
 				$location.path('/perfis');
 			};
 	});
