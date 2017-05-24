@@ -4,7 +4,7 @@
 
 	angular
 		.module('appModule')
-		.controller('AdicionarUsuarioController', function($scope, adicionarUsuarioService) {
+		.controller('AdicionarUsuarioController', function($scope, adicionarUsuarioService, $location ) {
 
 			$scope.formulario = {};
 
