@@ -12,7 +12,8 @@ GET     /historicoUsuarios                      UsuariosController.listarHistori
 #ROTA DE CARGOS
 GET     /cargos 								CargosController.listarCargos
 POST    /removerCargo/{id}       				CargosController.removerCargo
-GET     /cargoParaEditar                        CargosController.editarCargo
+POST    /editarCargo/{id}	                    CargosController.buscaEditarCargo
+POST    /gravarCargo/{id}/{nomeEdicao}	        CargosController.editarCargo
 
 #ROTA DE PERFIS
 GET     /perfis 								PerfisController.listarPerfis

@@ -7,14 +7,14 @@
                     div.input
                         .form-group
                             label(for="nome") Nome*:
-                            input.form-control(type="text", name="nomeUsuario", placeholder = "Nome do novo Usuário",id = "nome", ng-model="formulario.nome")
+                            input.form-control(type="text", name="nomeUsuario", placeholder = "Nome do novo Usuário",id = "nome", ng-model="formulario.nome", required="required")
                         .form-group
                             label(for="cpf") CPF*:
-                            input.form-control(type="text", name="cpf", placeholder = "CPF do novo Usuário",id="cpf", ng-model="formulario.cpf")
+                            input.form-control(type="text", name="cpf", placeholder = "CPF do novo Usuário",id="cpf", ng-model="formulario.cpf", required="required")
                         .form-group
                             label(for="cargo") Cargo*:
                             div(ng-repeat=("cargo in listaCargos"))
-                                input(type="radio", name="cargo", value="{{cargo.nome}}", ng-model="formulario.cargo")
+                                input(type="radio", name="cargo", value="{{cargo.nome}}", ng-model="formulario.cargo", required="required")
                                 | {{cargo.nome}}
                             .input-group
                                 span.input-group-addon

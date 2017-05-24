@@ -32,9 +32,9 @@
                     templateUrl: 'views/sections/historicoUsuarios.html',
                     controller: 'HistoricoUsuariosController',
                 })
-                .when("/editarCargo", {
+                .when("/editarCargo/:id", {
                     templateUrl: 'views/sections/editarCargos.html',
-                    controller: 'EditarCargoController',
+                    controller: 'EditarCargosController',
                 })
 				.otherwise({
 					redirectTo: '/',

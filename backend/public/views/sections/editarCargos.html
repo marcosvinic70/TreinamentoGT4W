@@ -3,12 +3,12 @@
   <div id="panelprincipal" class="panel panel-default">
     <div class="panel panel-heading">
       <div class="panel-body">
-        <form name="editarCargo" method="get" ng-submit="">
-          <h4>Editar Cargo: {{nomeEdicao}}</h4>
+        <form name="editarCargo" method="get" ng-submit="salvarCargoEditado()">
+          <h4>Editar Cargo: {{cargoEditado.nome}}</h4>
           <div class="input">
             <div class="form-group">
               <label for="nome">Nome*:</label>
-              <input type="text" name="nomeCargo" id="nomeCargo" class="form-control"/>
+              <input type="text" name="nome" id="nomeCargo" ng-model="nomeCargo" value="{{cargoEditado.nome}}" required="required" class="form-control"/>
             </div>
           </div>
           <div class="actions">

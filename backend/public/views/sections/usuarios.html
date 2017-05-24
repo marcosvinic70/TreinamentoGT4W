@@ -10,7 +10,8 @@
               <th>	Id</th>
               <th>	Nome</th>
               <th>	CPF</th>
-              <th width="180px">	Cargo</th>
+              <th width="180px">Cargo</th>
+              <th width="10px"></th>
               <th width="10px"></th>
               <th width="10px"></th>
             </tr>
@@ -21,6 +22,7 @@
               <td>	{{usuario.nome}}</td>
               <td>	{{usuario.cpf}}</td>
               <td>	{{usuario.cargo.nome}}</td>
+              <td width="10px"><a ng-click="ModalVisualizar(usuario.id)" title="Visualizar Usuário" data-toggle="modal" class="span glyphicon glyphicon-eye-open"></a></td>
               <td width="10px"><a href="#/editarUsuario/{{usuario.id}}" title="Editar Usuário" class="span glyphicon glyphicon-edit"></a></td>
               <td width="10px"><a ng-click="ModalRemover(usuario.id)" data-toggle="modal" title="Remover Usuário" style="color:red" class="span glyphicon glyphicon-trash">		</a></td>
             </tr>
@@ -47,13 +49,48 @@
     <div class="modal-content">
       <div class="modal-header">
         <button type="button" data-dismiss="modal" aria-label="Close" class="close">	      </button>
-        <h5 class="modal-title">Remoção de Usuário</h5>
+        <h4 class="modal-title">Remoção de Usuário</h4>
       </div>
       <div class="modal-body">
         <p>Confirmação de remoção.</p>
       </div>
       <div class="modal-footer">
         <button type="button" ng-click="RemoverUsuario()" class="btn btn-primary">Remover</button></button>
+        <button type="button" data-dismiss="modal" class="btn btn-primary">Voltar</button>
+      </div>
+    </div>
+  </div>
+</div>
+<div id="modalVisualizar" tabindex="-1" role="dialog" aria-labelledby="modal" aria-hidden="true" class="modal fade">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <button type="button" data-dismiss="modal" aria-label="Close" class="close">	      </button>
+        <h4 class="modal-title">Visualizar Usuário</h4>
+      </div>
+      <div class="modal-body">
+        <div class="panel panel-group panel-default">
+          <center> 
+            <h4>Informações do Usuário</h4>
+          </center>
+          <div class="panel-body"></div>
+          <p>ID: {{usuarioVisualizar.id}}</p>
+          <p>Nome: {{usuarioVisualizar.nome}}</p>
+          <p>CPF: {{usuarioVisualizar.cpf}}</p>
+          <p>Cargo: {{usuarioVisualizar.cargo.nome}}</p>
+          <p>Sexo: {{usuarioVisualizar.sexo}}</p>
+          <p>Data de Nascimento: {{usuarioVisualizar.dataNascimento}}</p>
+          <p>Data Cadastro: {{usuarioVisualizar.dataCadastro}}</p>
+          <div class="panel panel-group panel-default">
+            <p>Lista de Perfis:
+              <div class="panel-body">
+                <p ng-repeat="perfil in usuarioVisualizar.listaPerfil">{{perfil.nome}}</p>
+              </div>
+            </p>
+          </div>
+        </div>
+      </div>
+      <div class="modal-footer">
         <button type="button" data-dismiss="modal" class="btn btn-primary">Voltar</button>
       </div>
     </div>

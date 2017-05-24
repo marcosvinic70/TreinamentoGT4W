@@ -9,7 +9,8 @@
 							th	Id
 							th	Nome
 							th	CPF
-							th(width="180px")	Cargo
+							th(width="180px") Cargo
+							th(width="10px")
 							th(width="10px")
 							th(width="10px")
 					tbody
@@ -18,6 +19,8 @@
 							td	{{usuario.nome}}
 							td	{{usuario.cpf}}
 							td	{{usuario.cargo.nome}}
+							td(width="10px")
+								a.span.glyphicon.glyphicon-eye-open(ng-click="ModalVisualizar(usuario.id)",title="Visualizar Usuário",data-toggle="modal")
 							td(width="10px")
 								a.span.glyphicon.glyphicon-edit(href="#/editarUsuario/{{usuario.id}}",title="Editar Usuário")
 							td(width="10px")
@@ -38,9 +41,36 @@
 		.modal-content
 			.modal-header
 				button.close(type="button",data-dismiss="modal", aria-label="Close")	      
-				h5.modal-title Remoção de Usuário
+				h4.modal-title Remoção de Usuário
 			.modal-body
 				p Confirmação de remoção.
 			.modal-footer
 				button.btn.btn-primary(type="button" , ng-click = 'RemoverUsuario()') Remover</button>
+				button.btn.btn-primary(type="button" , data-dismiss="modal") Voltar
+
+#modalVisualizar.modal.fade(tabindex="-1", role="dialog", aria-labelledby="modal", aria-hidden="true")
+	.modal-dialog
+		.modal-content
+			.modal-header
+				button.close(type="button",data-dismiss="modal", aria-label="Close")	      
+				h4.modal-title Visualizar Usuário
+			.modal-body
+				.panel.panel-group.panel-default
+					center 
+						h4 Informações do Usuário
+					.panel-body
+					p ID: {{usuarioVisualizar.id}}
+					p Nome: {{usuarioVisualizar.nome}}
+					p CPF: {{usuarioVisualizar.cpf}}
+					p Cargo: {{usuarioVisualizar.cargo.nome}}
+					p Sexo: {{usuarioVisualizar.sexo}}
+					p Data de Nascimento: {{usuarioVisualizar.dataNascimento}}
+					p Data Cadastro: {{usuarioVisualizar.dataCadastro}}
+					.panel.panel-group.panel-default
+						p Lista de Perfis:
+							.panel-body
+								p(ng-repeat=("perfil in usuarioVisualizar.listaPerfil"))
+									{{perfil.nome}}
+
+			.modal-footer
 				button.btn.btn-primary(type="button" , data-dismiss="modal") Voltar

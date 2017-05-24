@@ -16,6 +16,18 @@
 				$('#modal').modal('show');
 			};
 
+			$scope.ModalVisualizar = function(id) {
+				var contador = 0;
+				var i = 0;
+				angular.forEach($scope.listaUsuarios, function(elemento) {
+					if(elemento.id == id) {contador = i;}
+					i++;
+				});
+
+				$scope.usuarioVisualizar = $scope.listaUsuarios[contador];
+				$('#modalVisualizar').modal('show');
+			};
+
 			$scope.RemoverUsuario = function(){
 				usuariosService.removerUsuario($scope.idRemocao);
 				$scope.inicio();
