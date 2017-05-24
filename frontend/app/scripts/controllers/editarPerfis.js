@@ -3,15 +3,15 @@
 	'use strict';
 	angular
 		.module('appModule')
-		.controller('EditarPerfisController', function($scope,$routeParams,$location,editarPerfisService) {
+		.controller('EditarPerfisController', function($scope,$routeParams,$location,perfisService) {
 
-			editarPerfisService.buscarPerfil($routeParams.id).success(function(result){
+			perfisService.buscarPerfil($routeParams.id).success(function(result){
 				$scope.perfilEditado = result;
 
 			});
 
 			$scope.salvarPerfilEditado = function() {
-				editarPerfisService.salvarPerfil($routeParams.id, $scope.nomePerfil);
+				perfisService.salvarPerfil($routeParams.id, $scope.nomePerfil);
 				$location.path('/perfis');
 			};
 	});

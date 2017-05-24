@@ -14,9 +14,4 @@ public class Cargo extends Model
         this.nome = nome;
     }
 
-    public void editarNomeCargo(String nome)
-    {
-        this.nome = nome;
-    }
-
 }

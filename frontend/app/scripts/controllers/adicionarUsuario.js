@@ -4,15 +4,15 @@
 
 	angular
 		.module('appModule')
-		.controller('AdicionarUsuarioController', function($scope,$location, adicionarUsuarioService) {
+		.controller('AdicionarUsuarioController', function($scope,$location, usuariosService) {
 
 			$scope.formulario = {};
 
-			adicionarUsuarioService.carregarCargos().success(function(result){
+			usuariosService.carregarCargos().success(function(result){
 				$scope.listaCargos = result;
 			});
 
-			adicionarUsuarioService.carregarPerfis().success(function(result){
+			usuariosService.carregarPerfis().success(function(result){
 				$scope.listaPerfis = result;
 			});
 
@@ -22,7 +22,7 @@
 					$scope.formulario.array.push(elemento);
 				});
 
-				adicionarUsuarioService.cadastrarUsuario($scope.formulario, 0).success(function(result){
+				usuariosService.gravarAlteracoes(0,$scope.formulario).success(function(result){
 					$scope.message = result;
 					alert($scope.message);
 				});

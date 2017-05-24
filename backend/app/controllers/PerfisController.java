@@ -39,7 +39,15 @@ public class PerfisController extends BaseController{
 
 	public static void editarPerfil(Long id, String nomeEdicao) {
 		PerfilUsuario perfil = PerfilUsuario.findById(id);
-		perfil.editarPerfil(nomeEdicao);
-		perfil.save();
+		perfil.nome = nomeEdicao;
+		
+		try{
+			perfil.save();
+			renderText("Cargo editado com sucesso!!!");
+		}
+		catch(Exception e)
+		{
+			renderText("Erro ao editar o cargo!!!");
+		}
 	}
 }

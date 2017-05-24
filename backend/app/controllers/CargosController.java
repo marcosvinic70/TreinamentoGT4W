@@ -40,7 +40,15 @@ public class CargosController extends BaseController{
 
 	public static void editarCargo(Long id, String nomeEdicao) {
 		Cargo cargo = Cargo.findById(id);
-		cargo.editarNomeCargo(nomeEdicao);
-		cargo.save();
+		cargo.nome = nomeEdicao;
+		
+		try{
+			cargo.save();
+			renderText("Cargo editado com sucesso!!!");
+		}
+		catch(Exception e)
+		{
+			renderText("Erro ao editar o cargo!!!");
+		}
 	}
 }

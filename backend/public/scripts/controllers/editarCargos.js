@@ -3,15 +3,19 @@
 	'use strict';
 	angular
 		.module('appModule')
-		.controller('EditarCargosController', function($scope,$routeParams,$location,editarCargosService) {
+		.controller('EditarCargosController', function($scope,$routeParams,$location,cargosService) {
 
-			editarCargosService.buscarCargo($routeParams.id).success(function(result){
+			cargosService.buscarCargo($routeParams.id).success(function(result){
 				$scope.cargoEditado = result;
 
 			});
 
 			$scope.salvarCargoEditado = function() {
-				editarCargosService.salvarCargo($routeParams.id, $scope.nomeCargo);
+				cargosService.salvarCargo($routeParams.id, $scope.nomeCargo).success(function(result){
+					$scope.message = result;
+					alert($scope.message);
+			});
+
 				$location.path('/cargos');
 			};
 	});

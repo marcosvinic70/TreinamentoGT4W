@@ -11,8 +11,4 @@ public class PerfilUsuario extends Model {
     public PerfilUsuario(String nome) {
         this.nome = nome;
     }
-
-    public void editarPerfil(String nome) {
-        this.nome = nome;
-    }
 }

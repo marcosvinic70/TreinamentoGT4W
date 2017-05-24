@@ -19,6 +19,14 @@
 			this.cargoEditado = function(id) {
 				return request.get('cargoParaEditar',id);
 			};
+
+			this.buscarCargo = function(id) {
+				return request.post('editarCargo/'+id);
+			};
+
+			this.salvarCargo = function(id,nomeEdicao) {
+				return request.post('gravarCargo/'+id + '/' + nomeEdicao);
+			};
 	});
 
 })();
