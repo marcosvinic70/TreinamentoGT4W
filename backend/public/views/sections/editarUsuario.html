@@ -36,11 +36,11 @@
             <div class="form-group">
               <label for="perfis">Perfis:</label>
               <div ng-repeat="perfil in listaPerfis">
-                <input type="checkbox" name="{{perfil.nome}}" ng-model="formulario.perfisModelo[perfil.nome]" ng-true-value="'{{perfil.nome}}'" ng-false-value=""/>{{perfil.nome}}
+                <input type="checkbox" name="{{perfil.nome}}" value="{{perfil.nome}}" ng-false-value="" ng-checked="lista.indexOf(perfil.nome) !== -1"/>{{perfil.nome}}
               </div>
               <div class="input-group"><span class="input-group-addon">
-                  <input type="checkbox"/></span>
-                <input type="text" placeholder="Novo Perfil de Usuário" ng-model="formulario.perfisModelo.perfilNovo" class="form-control"/>
+                  <input type="checkbox" name="perfilNovo"/></span>
+                <input type="text" placeholder="Novo Perfil de Usuário" ng-model="formulario.perfilNovo" class="form-control"/>
               </div>
             </div>
           </div>

@@ -34,12 +34,12 @@
                         .form-group
                             label(for="perfis") Perfis:
                             div(ng-repeat=("perfil in listaPerfis"))
-                                input(type="checkbox", name="{{perfil.nome}}", ng-model="formulario.perfisModelo[perfil.nome]",ng-true-value="'{{perfil.nome}}'", ng-false-value="")
+                                input(type="checkbox", name="{{perfil.nome}}",value="{{perfil.nome}}", ng-false-value="", ng-checked="lista.indexOf(perfil.nome) !== -1")
                                 | {{perfil.nome}}
                             .input-group
                                 span.input-group-addon
-                                    input(type="checkbox")
-                                input.form-control(type="text", placeholder="Novo Perfil de Usuário", ng-model="formulario.perfisModelo.perfilNovo")
+                                    input(type="checkbox", name="perfilNovo")
+                                input.form-control(type="text", placeholder="Novo Perfil de Usuário", ng-model="formulario.perfilNovo")
 
                     div.actions
                         input.form-control(type="submit", value="Editar Usuário")

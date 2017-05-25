@@ -10,9 +10,11 @@
 								th	Nome
 								th	CPF
 								th	Cargo
+								th  Perfis de Usuário
 						tbody
 							tr(ng-repeat=("usuario in listaHistoricoUsuarios"))
 								td	{{usuario.id}}
 								td	{{usuario.nome}}
 								td	{{usuario.cpf}}
 								td	{{usuario.cargo}}
+								td  {{usuario.listaPerfil}}

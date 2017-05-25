@@ -24,7 +24,12 @@ public class RegistroUsuario extends Model {
         this.listaPerfil = "";
 
         for(PerfilUsuario perfil : user.listaPerfil) {
-            listaPerfil += perfil.nome + ",";
+            if(listaPerfil.compareTo("") == 0) {
+                listaPerfil += perfil.nome;
+            }
+            else {
+                listaPerfil += "," + perfil.nome;
+            }
         }
         this.dataDelete = new Date();
     }
